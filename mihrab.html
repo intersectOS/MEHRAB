@@ -104,6 +104,8 @@ html.art .no-art{display:none!important}
 .pill:hover{background:rgba(0,0,0,.55)}
 .intro-brand{position:absolute;top:max(18px,env(safe-area-inset-top));inset-inline-start:18px;display:flex;align-items:center;gap:8px;color:var(--gold2);font-family:'Reem Kufi';font-size:20px;opacity:.9}
 .intro-brand svg{width:120px;height:auto}
+.unmute{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;font-size:16px;padding:14px 22px;background:rgba(2,26,19,.75);border-color:var(--gold);display:none}
+.unmute.on{display:inline-flex}
 .progress{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.12)}
 .progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal2),var(--gold2))}
 
@@ -497,7 +499,8 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
 <!-- ================= INTRO ================= -->
 <section id="intro" class="screen hidden">
   <canvas id="introBg" width="72" height="40"></canvas>
-  <video id="introVid" playsinline preload="auto"></video>
+  <video id="introVid" playsinline webkit-playsinline preload="auto"></video>
+  <button class="pill unmute" id="unmute"><svg class="ic"><use href="#i-vol"/></svg><span data-t="soundHint">شغّل الصوت لتجربة كاملة</span></button>
   <div class="vignette"></div>
   <div class="intro-brand" id="introMini"></div>
   <div class="intro-ctrl">
@@ -992,18 +995,20 @@ document.getElementById("gateLangs").addEventListener("click",e=>{const b=e.targ
 try{const l=localStorage.getItem("mihrab_lang");if(l&&LI[l]!==undefined)S.lang=l}catch(e){}
 applyLang();
 
-let vidReady=(async()=>{try{const mp4ok=vid.canPlayType('video/mp4; codecs="avc1.64001F, mp4a.40.2"');const useWebm=!mp4ok&&vid.canPlayType('video/webm; codecs="vp9, opus"');const b64=document.getElementById(useWebm?"introWebm":"introData").textContent.trim();if(!b64||b64.startsWith("__")){vid.src=useWebm?"intro.webm":"intro.mp4";vid.load();return}const r=await fetch((useWebm?"data:video/webm;base64,":"data:video/mp4;base64,")+b64);const blob=await r.blob();vid.src=URL.createObjectURL(blob);vid.load()}catch(e){console.warn(e)}})();
+let SRC=[];(function(){try{const mp4ok=vid.canPlayType('video/mp4; codecs="avc1.64001F, mp4a.40.2"')||vid.canPlayType("video/mp4");const webok=vid.canPlayType('video/webm; codecs="vp9, opus"');const mk=(id,type)=>{const b=document.getElementById(id).textContent.trim();if(!b||b.startsWith("__"))return null;const bin=atob(b),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return URL.createObjectURL(new Blob([u],{type}))};const emb=document.getElementById("introData").textContent.trim().length>0;if(emb){if(mp4ok)SRC.push(()=>mk("introData","video/mp4"));if(webok)SRC.push(()=>mk("introWebm","video/webm"))}else{if(mp4ok)SRC.push(()=>"intro.mp4");if(webok)SRC.push(()=>"intro.webm")}nextSrc()}catch(e){console.warn(e)}})();
+function nextSrc(){const f=SRC.shift();if(!f)return false;const u=f();if(!u)return nextSrc();vid.src=u;vid.load();return true}
 
-if(!document.getElementById("introData").textContent.trim())document.documentElement.classList.add("art");
+if(!document.getElementById("introData").textContent.trim()&&/claude|anthropic/i.test(location.hostname))document.documentElement.classList.add("art");
 const caps=[...document.querySelectorAll(".cap")];
 let rafId=null,finalShown=false,readyShown=false;
 const bg=document.getElementById("introBg"),bctx=bg.getContext("2d");
 function tick(){const tt=vid.currentTime,dur=vid.duration||16.35;caps.forEach(c=>c.classList.toggle("show",tt>=+c.dataset.in&&tt<+c.dataset.out));if(tt>=13.1&&!finalShown){finalShown=true;fin.classList.add("show")}if(tt>=14.2&&!readyShown){readyShown=true;fin.classList.add("ready")}document.getElementById("prog").style.width=(tt/dur*100)+"%";try{bctx.drawImage(vid,0,0,bg.width,bg.height)}catch(e){}rafId=requestAnimationFrame(tick)}
-vid.addEventListener("error",()=>fin.classList.add("show","ready"));
+vid.addEventListener("error",()=>{if(nextSrc()){if(!intro.classList.contains("hidden"))vid.play().catch(()=>{})}else fin.classList.add("show","ready")});
 vid.addEventListener("ended",()=>{fin.classList.add("show","ready");document.getElementById("prog").style.width="100%"});
-async function playIntro(replay){await vidReady;if(!vid.src){enterApp();return}gate.classList.add("hidden");intro.classList.remove("hidden");finalShown=readyShown=false;fin.classList.remove("show","ready");caps.forEach(c=>c.classList.remove("show"));vid.currentTime=0;vid.muted=false;updMute();try{await vid.play()}catch(e){vid.muted=true;updMute();try{await vid.play()}catch(_){}}cancelAnimationFrame(rafId);rafId=requestAnimationFrame(tick);clearTimeout(window._safe);window._safe=setTimeout(()=>{if(!intro.classList.contains("hidden")&&vid.currentTime<0.2){fin.classList.add("show","ready")}},3000);if(!replay){try{document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}}}
+function playIntro(replay){gate.classList.add("hidden");intro.classList.remove("hidden");finalShown=readyShown=false;fin.classList.remove("show","ready");caps.forEach(c=>c.classList.remove("show"));try{vid.currentTime=0}catch(e){}vid.muted=false;updMute();const p=vid.play();if(p&&p.catch)p.catch(()=>{vid.muted=true;updMute();document.getElementById("unmute").classList.add("on");vid.play().catch(()=>fin.classList.add("show","ready"))});cancelAnimationFrame(rafId);rafId=requestAnimationFrame(tick);clearTimeout(window._safe);window._safe=setTimeout(()=>{if(!intro.classList.contains("hidden")&&vid.currentTime<0.2){fin.classList.add("show","ready")}},4000);if(!replay){try{const r=document.documentElement.requestFullscreen;if(r&&window.innerWidth>820)r.call(document.documentElement).catch(()=>{})}catch(e){}}}
 function updMute(){document.getElementById("muteBtn").innerHTML=ic(vid.muted?"volx":"vol")}
-document.getElementById("muteBtn").onclick=()=>{vid.muted=!vid.muted;updMute()};
+document.getElementById("muteBtn").onclick=()=>{vid.muted=!vid.muted;updMute();document.getElementById("unmute").classList.remove("on")};
+document.getElementById("unmute").onclick=()=>{vid.muted=false;updMute();document.getElementById("unmute").classList.remove("on");vid.play().catch(()=>{})};
 function fadeAudio(){const v0=vid.volume;let k=0;const iv=setInterval(()=>{k++;vid.volume=Math.max(0,v0*(1-k/12));if(k>=12){clearInterval(iv);vid.pause();vid.volume=1}},50)}
 function enterApp(){const h=document.documentElement;h.classList.add("doors-closed");document.body.classList.add("doors-closed");fadeAudio();setTimeout(()=>{gate.classList.add("hidden");intro.classList.add("hidden");cancelAnimationFrame(rafId);app.classList.add("on");S.view="home";render();window.scrollTo(0,0);setTimeout(()=>{document.body.classList.remove("doors-closed");h.classList.remove("doors-closed")},350)},950)}
 document.getElementById("enterBtn").onclick=()=>playIntro(false);

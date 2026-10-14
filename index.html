@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مِحراب | MIHRAB</title>
+<meta name="description" content="منصة مِحراب الذكية — MIHRAB Smart Mosque Platform">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22632%20-1340%20990%201400%22%20role%3D%22img%22%20aria-label%3D%22MIHRAB%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22sg1%22%20x1%3D%220%22%20y1%3D%22-1300%22%20x2%3D%220%22%20y2%3D%22300%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23F8EBC6%22/%3E%3Cstop%20offset%3D%22.45%22%20stop-color%3D%22%23E2C37E%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23A9843F%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M886%20-300%20V-540%20C886%20-800%201054.7%20-925%201127%20-985%20C1199.3%20-925%201368%20-800%201368%20-540%20V-300%22%20fill%3D%22none%22%20stroke%3D%22%235FD0C2%22%20stroke-width%3D%2222%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.8%22/%3E%3Cg%20fill%3D%22url%28%23sg1%29%22%3E%3Cpath%20d%3D%22M672%200%20V-520%20C672%20-850%20981.4%20-1100%201127%20-1290%20C1272.6%20-1100%201582%20-850%201582%20-520%20V0H1438%20V-520%20C1438%20-820%201220.3%20-945%201127%20-1115%20C1033.7%20-945%20816%20-820%20816%20-520%20V0%20Z%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20transform%3D%22translate%28965%200%29%20scale%281%20-1%29%22%20d%3D%22M90%200V568L235%20645V0Z%22/%3E%3Cpolygon%20points%3D%221127.0%2C-858.0%201143.8%2C-810.7%201189.2%2C-832.2%201167.7%2C-786.8%201215.0%2C-770.0%201167.7%2C-753.2%201189.2%2C-707.8%201143.8%2C-729.3%201127.0%2C-682.0%201110.2%2C-729.3%201064.8%2C-707.8%201086.3%2C-753.2%201039.0%2C-770.0%201086.3%2C-786.8%201064.8%2C-832.2%201110.2%2C-810.7%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g950:#021a13;--g900:#04241B;--g800:#073528;--g700:#0B4A37;--g600:#0F5E46;--g500:#147556;
+  --teal:#1FA79A;--teal2:#5FD0C2;--gold:#C9A45C;--gold2:#E8CF94;--gold3:#9C7A36;
+  --ink:#10221C;--muted:#5F7069;--bg:#F4F2EC;--card:#FFFFFF;--line:#E5E1D6;
+  --ok:#1FA77A;--warn:#E3A21A;--fault:#D64545;
+  --f-ui:'IBM Plex Sans Arabic','Outfit',system-ui,sans-serif;
+  --f-disp:'Reem Kufi','IBM Plex Sans Arabic',serif;
+  --radius:18px;
+  --shadow:0 1px 2px rgba(4,36,27,.06),0 8px 28px -12px rgba(4,36,27,.18);
+}
+html[lang=en],html[lang=fil],html[lang=id],html[lang=fr],html[lang=es]{--f-ui:'Outfit','IBM Plex Sans Arabic',system-ui,sans-serif;--f-disp:'Outfit','Reem Kufi',sans-serif}
+html[lang=ur]{--f-ui:'Noto Naskh Arabic','IBM Plex Sans Arabic',serif;--f-disp:'Reem Kufi','Noto Naskh Arabic',serif}
+html[lang=bn]{--f-ui:'Noto Sans Bengali','Nirmala UI','Vrinda','Outfit',sans-serif;--f-disp:'Noto Sans Bengali','Outfit',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--f-ui);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.fill{fill:currentColor;stroke:none}
+bdi{unicode-bidi:isolate}
+.screen{position:fixed;inset:0;z-index:50}
+.hidden{display:none!important}
+html.art .no-art{display:none!important}
+
+/* ============ GATE ============ */
+#gate{background:radial-gradient(120% 90% at 50% 0%,#0d5a43 0%,var(--g900) 55%,var(--g950) 100%);color:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;z-index:60}
+#gate::before{content:"";position:absolute;inset:-50%;background-image:var(--pattern);background-size:88px 88px;opacity:.5;animation:drift 90s linear infinite;mask-image:radial-gradient(circle at 50% 45%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(circle at 50% 45%,#000 0%,transparent 70%)}
+@keyframes drift{to{transform:translate(88px,88px) rotate(.001deg)}}
+.glow{position:absolute;width:70vmax;height:70vmax;border-radius:50%;background:radial-gradient(circle,rgba(201,164,92,.22),transparent 60%);top:50%;left:50%;transform:translate(-50%,-55%);animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.55;transform:translate(-50%,-55%) scale(1.08)}}
+.motes span{position:absolute;bottom:-10px;width:3px;height:3px;border-radius:50%;background:var(--gold2);box-shadow:0 0 8px var(--gold);opacity:0;animation:rise linear infinite}
+@keyframes rise{10%{opacity:.9}90%{opacity:.6}100%{transform:translateY(-105vh);opacity:0}}
+.gate-inner{position:relative;text-align:center;padding:24px 16px;max-width:880px;width:100%}
+.lockup{width:min(560px,84vw);margin:0 auto 6px;display:block;line-height:0}
+.lockup svg{width:100%;height:auto;display:block;overflow:visible}
+.lockup.anim svg{filter:drop-shadow(0 0 28px rgba(201,164,92,.35));animation:wipe 2s cubic-bezier(.6,.1,.2,1) .2s both}
+.lockup.anim .hk{animation:fadeIn 1s 1.9s both}
+@keyframes wipe{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+.final .lockup{width:min(520px,80vw);filter:drop-shadow(0 8px 30px rgba(0,0,0,.65))}
+.final.show .lockup svg{animation:wipe 1.8s cubic-bezier(.6,.1,.2,1) both}
+.gate-logo{width:116px;height:auto;margin:0 auto 10px;display:block;filter:drop-shadow(0 0 24px rgba(201,164,92,.45))}
+.gate-logo .draw{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 2.6s cubic-bezier(.6,.1,.2,1) forwards}
+.gate-logo .draw.d2{animation-delay:.5s}
+.gate-logo .fadein{opacity:0;animation:fadeIn 1s 1.8s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+.wordmark{font-family:'Reem Kufi',serif;font-weight:700;font-size:clamp(54px,9vw,92px);line-height:1.05;background:linear-gradient(180deg,#F6E7BE 0%,var(--gold) 60%,var(--gold3) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;animation:up 1s 1.1s forwards}
+.latin{font-family:'Outfit',sans-serif;letter-spacing:.62em;font-size:14px;white-space:nowrap;color:var(--gold2);opacity:0;animation:up 1s 1.4s forwards;padding-inline-start:.62em}
+.gate-lead{margin:18px auto 30px;max-width:560px;font-size:clamp(16px,2.2vw,20px);color:rgba(255,255,255,.82);opacity:0;animation:up 1s 1.7s forwards;line-height:1.7}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lang-label{font-size:13px;color:var(--gold2);letter-spacing:.08em;margin-bottom:12px;opacity:0;animation:up 1s 2s forwards}
+.langs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;opacity:0;animation:up 1s 2.1s forwards}
+.lang-chip{padding:10px 18px;border-radius:999px;border:1px solid rgba(232,207,148,.28);background:rgba(255,255,255,.04);backdrop-filter:blur(6px);font-size:15px;transition:.25s;min-width:96px}
+.lang-chip:hover{border-color:var(--gold);background:rgba(201,164,92,.12)}
+.lang-chip.on{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--g900);border-color:transparent;font-weight:600;box-shadow:0 6px 24px -6px rgba(201,164,92,.7)}
+.lang-chip[data-l=ur]{font-family:'Noto Naskh Arabic',serif}.lang-chip[data-l=bn]{font-family:'Noto Sans Bengali',sans-serif}
+.lang-chip[data-l=en],.lang-chip[data-l=fil],.lang-chip[data-l=id],.lang-chip[data-l=fr],.lang-chip[data-l=es]{font-family:'Outfit',sans-serif}
+.gate-actions{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0;animation:up 1s 2.3s forwards}
+.btn-gold{display:inline-flex;align-items:center;gap:12px;padding:16px 38px;border-radius:999px;background:linear-gradient(180deg,#F3DFA8 0%,var(--gold) 55%,#B08a41 100%);color:var(--g900);font-weight:700;font-size:18px;box-shadow:0 10px 40px -8px rgba(201,164,92,.75),inset 0 1px 0 rgba(255,255,255,.6);position:relative;overflow:hidden;transition:transform .2s}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-gold::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);animation:shine 3.2s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+.link-ghost{color:rgba(255,255,255,.6);font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.link-ghost:hover{color:#fff}
+.sound-hint{font-size:13px;color:rgba(255,255,255,.55);display:flex;gap:8px;align-items:center}
+
+/* ============ INTRO ============ */
+#intro{background:#000;overflow:hidden;z-index:55}
+#introBg{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);filter:blur(28px) brightness(.55) saturate(1.2)}
+#introVid{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);height:100%;aspect-ratio:9/16;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
+@media (max-aspect-ratio:10/16){#introVid{width:100%;height:100%;left:0;transform:none;-webkit-mask-image:none;mask-image:none}}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.55) 100%),linear-gradient(180deg,rgba(0,0,0,.45) 0%,transparent 22%,transparent 62%,rgba(2,26,19,.85) 100%);pointer-events:none}
+.cap{position:absolute;left:0;right:0;bottom:16vh;text-align:center;color:#fff;padding:0 20px;opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1.2s ease;pointer-events:none}
+.cap.show{opacity:1;transform:none}
+.cap h2{font-family:var(--f-disp);font-size:clamp(26px,4.6vw,48px);font-weight:600;text-shadow:0 4px 30px rgba(0,0,0,.6);letter-spacing:.01em}
+.cap .verse{font-family:'Amiri',serif;font-size:clamp(24px,4vw,40px);color:var(--gold2);margin-bottom:10px;text-shadow:0 2px 20px rgba(0,0,0,.7);direction:rtl}
+.cap .ref{font-size:13px;color:rgba(255,255,255,.6);margin-top:6px}
+.cap .line{width:0;height:1px;margin:14px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent);transition:width 1.6s .3s ease}
+.cap.show .line{width:220px}
+.final{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;opacity:0;pointer-events:none;transition:opacity 1.4s ease;background:radial-gradient(circle at 50% 50%,rgba(2,26,19,.55),rgba(2,26,19,.15) 60%)}
+.final.show{opacity:1}
+.final.ready{pointer-events:auto;z-index:2}
+.final .gate-logo{width:104px}
+.final .wm{font-family:'Reem Kufi',serif;font-weight:700;font-size:clamp(56px,9vw,96px);background:linear-gradient(180deg,#F6E7BE,var(--gold) 60%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1;filter:drop-shadow(0 6px 30px rgba(0,0,0,.6))}
+.final .tg{font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,.88);margin:6px 0 30px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.final .btn-gold{opacity:0;transform:translateY(16px) scale(.96);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.final.ready .btn-gold{opacity:1;transform:none;animation:pulseGold 2.4s 1s ease-in-out infinite}
+@keyframes pulseGold{50%{box-shadow:0 10px 60px -4px rgba(232,207,148,.95),inset 0 1px 0 rgba(255,255,255,.6)}}
+.intro-ctrl{position:absolute;top:max(16px,env(safe-area-inset-top));inset-inline-end:16px;display:flex;gap:8px;z-index:3}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:13px;backdrop-filter:blur(8px)}
+.pill:hover{background:rgba(0,0,0,.55)}
+.intro-brand{position:absolute;top:max(18px,env(safe-area-inset-top));inset-inline-start:18px;display:flex;align-items:center;gap:8px;color:var(--gold2);font-family:'Reem Kufi';font-size:20px;opacity:.9}
+.intro-brand svg{width:120px;height:auto}
+.unmute{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;font-size:16px;padding:14px 22px;background:rgba(2,26,19,.75);border-color:var(--gold);display:none}
+.unmute.on{display:inline-flex}
+.progress{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.12)}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal2),var(--gold2))}
+
+/* ============ DOORS ============ */
+.door{position:fixed;top:0;bottom:0;width:50.5%;z-index:200;background-color:var(--g900);background-image:var(--pattern),linear-gradient(180deg,var(--g800),var(--g950));background-size:88px 88px,auto;transition:transform .85s cubic-bezier(.77,0,.18,1);pointer-events:none}
+.door.l{left:0;transform:translateX(-101%);box-shadow:inset -2px 0 0 var(--gold)}
+.door.r{right:0;transform:translateX(101%);box-shadow:inset 2px 0 0 var(--gold)}
+.doors-closed .door{transform:none}
+.seal{position:fixed;top:50%;left:50%;width:120px;height:120px;margin:-60px 0 0 -60px;z-index:201;border-radius:50%;background:radial-gradient(circle,var(--g700),var(--g900));border:2px solid var(--gold);display:grid;place-items:center;opacity:0;transform:scale(.6);transition:.5s;pointer-events:none;box-shadow:0 0 60px rgba(201,164,92,.5)}
+.seal svg{width:46px;height:auto}
+.doors-closed .seal{opacity:1;transform:scale(1)}
+
+/* ============ APP SHELL ============ */
+#app{position:relative;min-height:100vh;opacity:0;transition:opacity .6s}
+#app.on{opacity:1}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:linear-gradient(180deg,var(--g900),var(--g800));color:#fff;box-shadow:0 8px 30px -14px rgba(0,0,0,.5)}
+header.top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.7}
+.bar{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.brand svg{height:40px;width:auto;display:block}
+.brand small{font-size:9.5px!important;line-height:1.35;letter-spacing:.22em!important;border-inline-start:1px solid rgba(232,207,148,.35);padding-inline-start:10px}
+.brand b{font-family:'Reem Kufi';font-size:26px;color:var(--gold2);font-weight:700;line-height:1}
+.brand small{display:block;font-size:10.5px;letter-spacing:.28em;color:rgba(255,255,255,.55);font-family:'Outfit'}
+.tools{margin-inline-start:auto;display:flex;gap:8px;align-items:center}
+.sel{appearance:none;-webkit-appearance:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:10px;padding:8px 34px 8px 12px;font-size:14px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23E8CF94' stroke-width='3'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+[dir=rtl] .sel{padding:8px 12px 8px 34px;background-position:left 12px center}
+.sel option{color:#000}
+.tbtn{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font-size:13px}
+.tbtn:hover{background:rgba(255,255,255,.16)}
+nav.tabs{max-width:1400px;margin:0 auto;display:flex;gap:4px;padding:0 14px;overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding:12px 14px 14px;font-size:14.5px;color:rgba(255,255,255,.7);position:relative}
+.tab .ic{font-size:17px}
+.tab:hover{color:#fff}
+.tab.on{color:var(--gold2);font-weight:600}
+.tab.on::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+main{max-width:1400px;margin:0 auto;padding:26px 20px 40px;min-height:70vh}
+.view{animation:viewIn .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes viewIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+footer.credit{text-align:center;padding:22px 16px 30px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(201,164,92,.06))}
+footer.credit .d{display:inline-flex;align-items:center;gap:8px}
+footer.credit .demo{display:block;font-size:11.5px;margin-top:6px;opacity:.75}
+
+/* ============ COMMON UI ============ */
+.ph{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.ph h1{font-family:var(--f-disp);font-size:clamp(24px,3vw,32px);color:var(--g800);font-weight:700;display:flex;align-items:center;gap:12px}
+.ph h1 .ic{color:var(--gold);font-size:.9em}
+.ph p{color:var(--muted);margin-top:4px;font-size:14.5px}
+.live-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#E7F5F1;color:var(--g600);font-size:13px;font-weight:600}
+.dotlive{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(31,167,122,.6);animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(31,167,122,0)}100%{box-shadow:0 0 0 0 rgba(31,167,122,0)}}
+.grid{display:grid;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;position:relative;min-width:0}
+.card h3{font-size:16px;font-weight:700;color:var(--g800);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.card h3 .ic{color:var(--teal);font-size:18px}
+.card h3 .sp{margin-inline-start:auto}
+.kpis{grid-template-columns:repeat(5,1fr)}
+.kpi{padding:18px 18px 16px;overflow:hidden}
+.kpi .lbl{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.kpi .lbl .ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#EEF6F3;color:var(--g600);font-size:16px}
+.kpi .val{font-family:'Outfit',sans-serif;font-size:30px;font-weight:600;margin-top:10px;color:var(--ink);letter-spacing:-.01em}
+.kpi .val small{font-size:16px;color:var(--muted);font-weight:500}
+.kpi .delta{font-size:12px;margin-top:2px;color:var(--ok);font-family:'Outfit'}
+.kpi .delta.neg{color:var(--fault)}
+.kpi::after{content:"";position:absolute;inset-inline-end:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,rgba(201,164,92,.16),transparent 70%)}
+.kpi.k-fault .ico{background:#FCECEC;color:var(--fault)}
+.kpi.k-review .ico{background:#FDF4E1;color:#B47D07}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:11px;font-size:14px;font-weight:600;background:var(--g700);color:#fff;transition:.2s}
+.btn:hover{background:var(--g600)}
+.btn.soft{background:#EEF4F1;color:var(--g700)}
+.btn.soft:hover{background:#E1EDE8}
+.btn.gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--g900)}
+.btn.red{background:#FCECEC;color:var(--fault)}
+.btn.sm{padding:6px 11px;font-size:12.5px;border-radius:9px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);font-size:13px;background:#fff;transition:.2s}
+.chip .sw{width:9px;height:9px;border-radius:50%}
+.chip.off{opacity:.4}
+.fsel{appearance:none;-webkit-appearance:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 34px 8px 12px;font-size:13.5px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230B4A37' stroke-width='3'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+[dir=rtl] .fsel{padding:8px 12px 8px 34px;background-position:left 12px center}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.b-ok{background:#E5F5EE;color:#137450}.b-warn{background:#FDF2DB;color:#9A6A05}.b-fault{background:#FBE6E6;color:#B33131}.b-info{background:#E6F2F7;color:#1D6A8A}.b-gray{background:#EFEFEA;color:#5c625d}
+.note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#FFF8E8;border:1px solid #F1DFB4;color:#6F5310;font-size:13.5px;line-height:1.65}
+.note .ic{font-size:18px;margin-top:2px;color:#B8860B}
+table.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{text-align:start;font-weight:600;color:var(--muted);font-size:12.5px;padding:10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:11px 10px;border-bottom:1px solid #F0EDE5;vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tr:hover td{background:#FAFAF6}
+.tbl .num{font-family:'Outfit';white-space:nowrap;color:var(--muted)}
+.scroll-x{overflow-x:auto}
+.toast-wrap{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:300;display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none;width:calc(100% - 32px);max-width:460px}
+.toast{background:var(--g900);color:#fff;padding:12px 18px;border-radius:14px;font-size:14px;display:flex;align-items:center;gap:10px;box-shadow:0 14px 40px -10px rgba(0,0,0,.5);border:1px solid rgba(201,164,92,.4);animation:toastIn .45s cubic-bezier(.2,.8,.2,1)}
+.toast .ic{color:var(--gold2);font-size:18px}
+@keyframes toastIn{from{opacity:0;transform:translateY(16px)}}
+
+/* ============ HOME / HUB ============ */
+.hero{position:relative;border-radius:26px;overflow:hidden;background:radial-gradient(90% 120% at 85% 0%,#12704f 0%,var(--g800) 45%,var(--g900) 100%);color:#fff;padding:46px 40px;display:grid;grid-template-columns:1.25fr .9fr;gap:30px;align-items:center;box-shadow:0 30px 60px -30px rgba(4,36,27,.6)}
+.hero::before{content:"";position:absolute;inset:0;background-image:var(--pattern);background-size:88px 88px;opacity:.35;mask-image:linear-gradient(90deg,transparent,#000);-webkit-mask-image:linear-gradient(90deg,transparent,#000)}
+[dir=rtl] .hero::before{mask-image:linear-gradient(270deg,transparent,#000);-webkit-mask-image:linear-gradient(270deg,transparent,#000)}
+.hero>*{position:relative}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--gold2);font-size:13px;letter-spacing:.06em;padding:6px 12px;border-radius:999px;background:rgba(201,164,92,.12);border:1px solid rgba(201,164,92,.3)}
+.hero h1{font-family:var(--f-disp);font-size:clamp(28px,3.6vw,46px);line-height:1.3;margin:16px 0 14px;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p{color:rgba(255,255,255,.78);line-height:1.85;font-size:15.5px;max-width:620px}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.hs{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px;backdrop-filter:blur(6px)}
+.hs b{display:block;font-family:'Outfit';font-size:30px;font-weight:600;color:#fff}
+.hs span{font-size:13px;color:rgba(255,255,255,.7)}
+.hero-logo{position:absolute;inset-inline-end:-20px;bottom:-30px;width:230px;opacity:.07}
+.section-t{font-family:var(--f-disp);font-size:22px;color:var(--g800);margin:34px 0 16px;display:flex;align-items:center;gap:12px}
+.section-t::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+[dir=rtl] .section-t::after{background:linear-gradient(270deg,var(--line),transparent)}
+.windows{grid-template-columns:repeat(3,1fr)}
+.win{cursor:pointer;transition:transform .3s,box-shadow .3s;overflow:hidden;padding:0}
+.win:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(4,36,27,.35)}
+.win .top{height:118px;position:relative;background:linear-gradient(135deg,var(--g700),var(--g900));overflow:hidden;display:flex;align-items:flex-end;padding:16px}
+.win .top::before{content:"";position:absolute;inset:0;background-image:var(--pattern);background-size:60px 60px;opacity:.35}
+.win .top .big{position:absolute;inset-inline-end:16px;top:16px;font-size:58px;color:var(--gold2);opacity:.9}
+.win .top .num{position:relative;font-family:'Outfit';color:rgba(255,255,255,.5);font-size:13px;letter-spacing:.2em}
+.win:nth-child(2) .top{background:linear-gradient(135deg,#127a6c,#0a3f37)}
+.win:nth-child(3) .top{background:linear-gradient(135deg,#8c6b2c,#3e2f12)}
+.win:nth-child(4) .top{background:linear-gradient(135deg,#1c5f78,#0b2a37)}
+.win:nth-child(5) .top{background:linear-gradient(135deg,#4c4a7c,#1d1c36)}
+.win:nth-child(6) .top{background:linear-gradient(135deg,#5a6b3a,#232b14)}
+.win .body{padding:16px 18px 18px}
+.win h4{font-size:17px;color:var(--g800);margin-bottom:6px}
+.win p{font-size:13.5px;color:var(--muted);line-height:1.6;min-height:44px}
+.win .go{margin-top:12px;display:inline-flex;align-items:center;gap:6px;color:var(--teal);font-weight:600;font-size:13.5px}
+[dir=rtl] .flip{transform:scaleX(-1)}
+.eco{display:grid;grid-template-columns:1fr 1.1fr;gap:18px;align-items:center}
+.eco svg text{font-family:var(--f-ui)}
+.eco-list{display:grid;gap:12px}
+.eco-item{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:14px;background:#F8F7F2;border:1px solid var(--line)}
+.eco-item .n{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--g700);color:var(--gold2);font-size:18px;flex:none}
+.eco-item b{display:block;color:var(--g800);margin-bottom:2px}
+.eco-item span{font-size:13.5px;color:var(--muted);line-height:1.6}
+.flowdash{stroke-dasharray:6 8;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+
+/* ============ MINISTRY ============ */
+.mgrid{grid-template-columns:2fr 1fr}
+.mapwrap{position:relative;background:radial-gradient(circle at 50% 40%,#F5FAF8,#ECF2EF);border-radius:14px;border:1px solid var(--line);overflow:hidden}
+.mapwrap>svg{display:block;width:100%;height:auto}
+.mapwrap .land{fill:#fff;stroke:var(--g600);stroke-width:1.4;filter:drop-shadow(0 8px 14px rgba(11,74,55,.12))}
+.mapwrap .grat{stroke:#d9e5e0;stroke-width:.6}
+.mdot{cursor:pointer;transition:r .2s}
+.mdot:hover{r:6}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pring 1.8s ease-out infinite}
+@keyframes pring{0%{transform:scale(.6);opacity:.8}100%{transform:scale(3.2);opacity:0}}
+.city-l{font-size:10.5px;fill:#55716a;font-weight:600;pointer-events:none}
+.maptip{position:absolute;pointer-events:none;background:var(--g900);color:#fff;font-size:12.5px;padding:8px 10px;border-radius:10px;white-space:nowrap;transform:translate(-50%,-120%);opacity:0;transition:opacity .15s;z-index:4}
+.mpanel{position:absolute;top:12px;inset-inline-start:12px;width:250px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow);font-size:13px;animation:viewIn .35s}
+.mpanel h5{font-size:15px;color:var(--g800);margin-bottom:2px;padding-inline-end:22px}
+.mpanel .x{position:absolute;top:10px;inset-inline-end:10px;font-size:16px;color:var(--muted)}
+.mpanel .row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #ECE8DE}
+.mpanel .row:last-child{border:0}
+.mpanel .row span:first-child{color:var(--muted)}
+.legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-end:6px}
+.req{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;border:1px solid var(--line);background:#FBFAF6;margin-bottom:10px}
+.req .ri{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#E8F4F1;color:var(--teal);font-size:18px;flex:none}
+.req b{font-size:14px;display:block}
+.req small{color:var(--muted);font-size:12px}
+.req .acts{margin-inline-start:auto;display:flex;gap:6px}
+.req.mine{border-color:var(--gold);background:#FFFBF0;box-shadow:0 0 0 3px rgba(201,164,92,.15)}
+.empty{text-align:center;color:var(--muted);font-size:13.5px;padding:18px 0}
+.donut-wrap{display:flex;align-items:center;gap:18px}
+.donut-wrap svg{width:150px;flex:none}
+.dleg{display:grid;gap:10px;font-size:13.5px;flex:1}
+.dleg div{display:flex;align-items:center;gap:8px}
+.dleg i{width:10px;height:10px;border-radius:3px}
+.dleg b{margin-inline-start:auto;font-family:'Outfit'}
+.hbars{display:grid;gap:9px}
+.hbar{display:grid;grid-template-columns:120px 1fr 52px;gap:10px;align-items:center;font-size:13px}
+.hbar .tr{height:10px;border-radius:6px;background:#EEF0EB;overflow:hidden}
+.hbar .tr i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--teal),var(--g600));width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.hbar b{font-family:'Outfit';font-weight:600;text-align:end}
+.two{grid-template-columns:1fr 1fr}
+.repf{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* ============ IMAM ============ */
+.igrid{grid-template-columns:1.1fr 1fr 1fr}
+.mprof{background:linear-gradient(160deg,var(--g800),var(--g900));color:#fff;border:0;overflow:hidden}
+.mprof::before{content:"";position:absolute;inset:0;background-image:var(--pattern);background-size:70px 70px;opacity:.3}
+.mprof>*{position:relative}
+.mprof h2{font-family:var(--f-disp);font-size:26px;color:var(--gold2)}
+.mprof .sub{color:rgba(255,255,255,.75);font-size:14px;display:flex;align-items:center;gap:6px;margin-top:4px}
+.mprof .meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.mprof .meta div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px}
+.mprof .meta small{display:block;color:rgba(255,255,255,.6);font-size:12px}
+.mprof .meta b{font-size:14px}
+.next{margin-top:16px;display:flex;align-items:center;justify-content:space-between;background:rgba(201,164,92,.14);border:1px solid rgba(201,164,92,.4);border-radius:14px;padding:12px 14px}
+.next small{color:var(--gold2);font-size:12px}
+.next b{display:block;font-size:18px}
+.next .cd{font-family:'Outfit';font-size:26px;font-weight:600;color:var(--gold2);letter-spacing:.04em}
+.ptimes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
+.pt{text-align:center;padding:10px 4px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.pt small{display:block;font-size:12px;color:rgba(255,255,255,.65)}
+.pt b{font-family:'Outfit';font-size:15px}
+.pt.on{background:var(--gold);color:var(--g900);border-color:var(--gold)}
+.pt.on small{color:var(--g800)}
+.dev{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.dev:last-child{border:0}
+.dev .di{width:38px;height:38px;border-radius:11px;background:#EEF6F3;color:var(--g600);display:grid;place-items:center;font-size:18px;flex:none}
+.dev b{font-size:14px;display:block}
+.dev small{font-size:12px;color:var(--muted);font-family:'Outfit'}
+.dev .badge{margin-inline-start:auto}
+.sig{display:flex;gap:2px;align-items:flex-end;height:14px;margin-inline-start:auto}
+.sig i{width:3px;background:var(--ok);border-radius:1px}
+.bcbox{text-align:center;padding:10px 0 4px}
+.bc-ring{width:120px;height:120px;margin:4px auto 14px;border-radius:50%;display:grid;place-items:center;position:relative;background:#F1F4F2;color:var(--muted);font-size:42px;transition:.4s}
+.bc-ring.pending{background:#FDF4E1;color:#B47D07}
+.bc-ring.pending::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:3px dashed #E3A21A;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bc-ring.approved{background:radial-gradient(circle,#1FA79A,#0F5E46);color:#fff;box-shadow:0 0 0 0 rgba(31,167,154,.5);animation:bcPulse 2s infinite}
+@keyframes bcPulse{70%{box-shadow:0 0 0 22px rgba(31,167,154,0)}100%{box-shadow:0 0 0 0 rgba(31,167,154,0)}}
+.bc-ring.rejected{background:#FBE6E6;color:var(--fault)}
+.bc-state{font-weight:700;font-size:16px;color:var(--g800)}
+.bc-note{font-size:12.5px;color:var(--muted);margin:6px 0 14px}
+.steps{display:flex;justify-content:center;gap:6px;margin:10px 0 14px;font-size:11.5px;color:var(--muted)}
+.steps span{padding:4px 9px;border-radius:999px;background:#F1F1EC}
+.steps span.on{background:var(--g700);color:#fff}
+.echo-hero{background:linear-gradient(135deg,#FFF9EA,#FBF1D6);border:1px solid #EEDDB0;border-radius:16px;padding:18px;display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.echo-hero .h{width:54px;height:54px;border-radius:16px;background:linear-gradient(180deg,var(--gold2),var(--gold));display:grid;place-items:center;color:var(--g900);font-size:26px;flex:none}
+.echo-hero p{font-family:var(--f-disp);font-size:18px;color:#5a4410;line-height:1.5}
+.fb-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.fb{border:1px solid var(--line);border-radius:14px;padding:14px;background:#FCFBF8;position:relative}
+.fb.new{border-color:var(--gold);animation:glowIn 2s}
+@keyframes glowIn{0%{box-shadow:0 0 0 6px rgba(201,164,92,.35)}100%{box-shadow:none}}
+.fb .stars{color:var(--gold);font-size:13px;letter-spacing:2px}
+.fb p{margin:8px 0;font-size:14px;line-height:1.7}
+.fb small{color:var(--muted);font-size:12px;display:flex;justify-content:space-between}
+.badges{display:flex;gap:10px;flex-wrap:wrap}
+.bdg{flex:1;min-width:120px;text-align:center;padding:14px 8px;border-radius:14px;background:#F8F7F2;border:1px solid var(--line)}
+.bdg .m{width:46px;height:46px;margin:0 auto 8px;border-radius:50%;display:grid;place-items:center;font-size:22px;color:#fff;background:conic-gradient(from 200deg,var(--gold2),var(--gold3),var(--gold2))}
+.bdg b{font-size:13px;display:block}
+.bdg small{font-size:11.5px;color:var(--muted)}
+.bdg.lock{opacity:.5;filter:grayscale(1)}
+.lvl{height:8px;border-radius:6px;background:#EEF0EB;overflow:hidden;margin-top:6px}
+.lvl i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+
+/* ============ BENEFICIARY APP ============ */
+.appstage{display:grid;grid-template-columns:400px 1fr;gap:36px;align-items:start}
+.phone{width:360px;height:740px;margin:0 auto;border-radius:52px;background:#0b0f0e;padding:12px;box-shadow:0 40px 80px -30px rgba(4,36,27,.55),inset 0 0 0 2px #2a2f2d;position:relative}
+.phone::before{content:"";position:absolute;top:22px;left:50%;transform:translateX(-50%);width:110px;height:28px;border-radius:20px;background:#000;z-index:5}
+.scr{width:100%;height:100%;border-radius:42px;overflow:hidden;background:#F6F5F0;position:relative;display:flex;flex-direction:column}
+.scr.big{font-size:118%}
+.sbar{height:50px;flex:none;display:flex;justify-content:space-between;align-items:flex-end;padding:0 28px 6px;font-family:'Outfit';font-size:13px;font-weight:600;color:#fff;background:var(--g800)}
+.ahead{background:var(--g800);color:#fff;padding:8px 18px 16px;flex:none}
+.ahead .r1{display:flex;align-items:center;justify-content:space-between}
+.ahead .r1 b{display:block;line-height:0}.ahead .r1 b svg{height:30px;width:auto}
+.ahead .r1 button{font-size:12px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.12)}
+.ahead .r1 button.on{background:var(--gold);color:var(--g900)}
+.asearch{margin-top:12px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:14px;padding:10px 12px;color:var(--muted)}
+.asearch input{border:0;outline:0;flex:1;background:transparent;font-size:.86em;color:var(--ink);min-width:0}
+.abody{flex:1;overflow-y:auto;padding:14px 14px 20px;scrollbar-width:none}
+.abody::-webkit-scrollbar{display:none}
+.anav{flex:none;display:grid;grid-template-columns:repeat(5,1fr);background:#fff;border-top:1px solid var(--line);padding:8px 6px 18px}
+.anav button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--muted);padding:4px 0}
+.anav button .ic{font-size:20px}
+.anav button.on{color:var(--g700);font-weight:700}
+.anav button.on .ic{color:var(--gold3)}
+.minimap{height:130px;border-radius:16px;background:linear-gradient(135deg,#E5EFEB,#F1F5F2);position:relative;overflow:hidden;margin-bottom:14px;border:1px solid var(--line)}
+.minimap .rd{position:absolute;background:#fff;border-radius:4px}
+.minimap .pin{position:absolute;width:26px;height:26px;margin:-26px 0 0 -13px;color:var(--g700);font-size:26px}
+.minimap .me{position:absolute;width:14px;height:14px;border-radius:50%;background:#2F80ED;border:3px solid #fff;box-shadow:0 0 0 6px rgba(47,128,237,.2)}
+.alist{display:grid;gap:10px}
+.mitem{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;cursor:pointer;text-align:start;width:100%}
+.mitem .mi{width:46px;height:46px;border-radius:14px;flex:none;display:grid;place-items:center;background:linear-gradient(160deg,var(--g600),var(--g900));color:var(--gold2);font-size:22px}
+.mitem b{font-size:.93em;display:block;color:var(--ink)}
+.mitem small{font-size:.76em;color:var(--muted);display:block}
+.mitem .km{margin-inline-start:auto;text-align:end;font-family:'Outfit';font-size:.8em;color:var(--g600);font-weight:600;white-space:nowrap}
+.mcover{height:150px;border-radius:20px;background:linear-gradient(160deg,var(--g600),var(--g900));position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:14px;color:#fff}
+.mcover::before{content:"";position:absolute;inset:0;background-image:var(--pattern);background-size:54px 54px;opacity:.4}
+.mcover .arch{position:absolute;inset-inline-end:16px;top:12px;width:62px;opacity:.95}.mcover .arch svg{width:100%;height:auto}
+.mcover>div{position:relative}
+.mcover b{font-family:var(--f-disp);font-size:1.25em;display:block}
+.mcover small{opacity:.8;font-size:.8em}
+.arow{display:flex;gap:8px;margin:12px 0}
+.arow .btn{flex:1;justify-content:center;font-size:.8em;padding:10px}
+.apt{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.apt div{background:#fff;border:1px solid var(--line);border-radius:12px;text-align:center;padding:8px 2px}
+.apt div.on{background:var(--g700);color:#fff;border-color:var(--g700)}
+.apt small{display:block;font-size:.7em;opacity:.75}
+.apt b{font-family:'Outfit';font-size:.82em}
+.asec{font-weight:700;font-size:.9em;margin:16px 0 8px;color:var(--g800)}
+.rate-sum{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.rate-sum b{font-family:'Outfit';font-size:1.6em;color:var(--g800)}
+.live-card{background:linear-gradient(170deg,var(--g800),var(--g950));border-radius:24px;padding:22px 18px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.live-card::before{content:"";position:absolute;inset:0;background-image:var(--pattern);background-size:54px 54px;opacity:.25}
+.live-card>*{position:relative}
+.pilot{display:inline-flex;align-items:center;gap:6px;font-size:.72em;padding:5px 10px;border-radius:999px;background:rgba(227,162,26,.18);color:#F7C35A;border:1px solid rgba(227,162,26,.4)}
+.wave{display:flex;align-items:center;justify-content:center;gap:4px;height:80px;margin:22px 0}
+.wave i{width:5px;border-radius:4px;background:linear-gradient(180deg,var(--teal2),var(--gold2));height:10px;transition:height .3s}
+.wave.on i{animation:wv 1s ease-in-out infinite}
+@keyframes wv{0%,100%{height:10px}50%{height:var(--h)}}
+.playb{width:72px;height:72px;border-radius:50%;background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--g900);font-size:28px;display:grid;place-items:center;margin:0 auto;box-shadow:0 10px 30px -8px rgba(201,164,92,.8)}
+.playb:disabled{background:#3b4a45;color:#7d8c86;box-shadow:none}
+.lock-msg{font-size:.8em;color:rgba(255,255,255,.72);margin-top:14px;line-height:1.7}
+.rate-cat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
+.rate-cat span{font-size:.86em;font-weight:600}
+.stars-in{display:flex;gap:2px;direction:ltr}
+.stars-in button{font-size:22px;color:#D9D4C4;line-height:1}
+.stars-in button.on{color:var(--gold)}
+.acomment{width:100%;min-height:90px;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:.86em;resize:none;outline:0;background:#fff}
+.acomment:focus{border-color:var(--teal)}
+.amod{font-size:.72em;color:var(--muted);display:flex;gap:6px;align-items:center;margin:8px 0 12px}
+.recv{background:linear-gradient(180deg,#F2EEE3,#E4DECD);border-radius:30px;padding:22px;margin:6px auto 14px;width:230px;box-shadow:0 20px 30px -18px rgba(0,0,0,.4),inset 0 2px 0 #fff;text-align:center}
+.recv .grill{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;padding:10px;background:#d5cebb;border-radius:16px}
+.recv .grill i{aspect-ratio:1;border-radius:50%;background:#a59d86}
+.recv .lcd{margin:14px 0;background:#1d2a25;color:#5FD0C2;font-family:'Outfit';font-size:.72em;padding:8px;border-radius:8px;min-height:34px;display:flex;align-items:center;justify-content:center;gap:6px}
+.recv .one{width:86px;height:86px;border-radius:50%;margin:0 auto;background:radial-gradient(circle at 40% 35%,#2bbfa9,#0F5E46);color:#fff;font-size:34px;display:grid;place-items:center;box-shadow:0 8px 0 #0a3f30,0 14px 20px -6px rgba(0,0,0,.4);transition:.15s}
+.recv .one:active{transform:translateY(5px);box-shadow:0 3px 0 #0a3f30}
+.recv.on .one{background:radial-gradient(circle at 40% 35%,#F3DFA8,#B08a41);box-shadow:0 8px 0 #7a5d24,0 0 30px rgba(232,207,148,.8)}
+.future{display:inline-flex;gap:6px;align-items:center;font-size:.72em;padding:4px 10px;border-radius:999px;background:#E6F2F7;color:#1D6A8A;font-weight:600}
+.feat-list{display:grid;gap:14px}
+.feat{display:flex;gap:14px;align-items:flex-start;cursor:pointer;padding:16px;border-radius:16px;border:1px solid var(--line);background:#fff;transition:.25s;text-align:start;width:100%}
+.feat:hover{border-color:var(--teal)}
+.feat.on{border-color:var(--gold);background:#FFFBF0;box-shadow:0 0 0 3px rgba(201,164,92,.15)}
+.feat .fi{width:44px;height:44px;border-radius:13px;background:var(--g700);color:var(--gold2);display:grid;place-items:center;font-size:20px;flex:none}
+.feat b{display:block;color:var(--g800);margin-bottom:3px}
+.feat span{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+/* ============ IOT / GOV ============ */
+.chain{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;overflow-x:auto;padding:10px 4px 18px}
+.node{flex:1;min-width:150px;text-align:center;padding:18px 12px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);position:relative}
+.node .ni{width:58px;height:58px;margin:0 auto 10px;border-radius:18px;display:grid;place-items:center;font-size:26px;color:var(--gold2);background:linear-gradient(160deg,var(--g600),var(--g900))}
+.node b{display:block;font-size:14px;color:var(--g800)}
+.node small{font-size:12px;color:var(--muted)}
+.link{flex:0 0 56px;align-self:center;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--teal) 0 40%,#d6e7e2 40%) 0 0/28px 100% repeat-x;animation:flow 1s linear infinite}
+[dir=rtl] .link{animation-direction:reverse}
+@keyframes flow{to{background-position:28px 0}}
+.outs{flex:1.2;min-width:190px;display:grid;gap:10px}
+.outs .node{padding:10px;display:flex;align-items:center;gap:10px;text-align:start}
+.outs .node .ni{width:40px;height:40px;margin:0;font-size:18px;border-radius:12px}
+.hw{grid-template-columns:repeat(4,1fr)}
+.hwc .hi{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:24px;background:#EEF6F3;color:var(--g600);margin-bottom:12px}
+.hwc h4{font-size:16px;color:var(--g800);margin-bottom:6px}
+.hwc p{font-size:13.5px;color:var(--muted);line-height:1.7}
+.hwc ul{list-style:none;margin-top:10px;display:grid;gap:6px}
+.hwc li{font-size:13px;display:flex;gap:8px;align-items:center}
+.hwc li .ic{color:var(--ok)}
+.priv-banner{display:flex;gap:16px;align-items:center;padding:18px 22px;border-radius:18px;background:linear-gradient(135deg,var(--g800),var(--g900));color:#fff;margin-top:18px}
+.priv-banner .ic{font-size:34px;color:var(--gold2)}
+.priv-banner b{font-size:17px;display:block}
+.priv-banner span{color:rgba(255,255,255,.75);font-size:14px}
+.gcards{grid-template-columns:repeat(4,1fr)}
+.gc{border-top:4px solid var(--gold)}
+.gc .gi{font-size:28px;color:var(--gold3);margin-bottom:10px}
+.gc h4{font-size:16px;color:var(--g800);margin-bottom:8px}
+.gc p{font-size:13.5px;color:var(--muted);line-height:1.75}
+.stepper{display:flex;gap:0;align-items:flex-start;overflow-x:auto;padding:8px 0}
+.st{flex:1;min-width:130px;text-align:center;position:relative}
+.st .c{width:54px;height:54px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;background:#fff;border:2px solid var(--teal);color:var(--teal);font-size:22px;position:relative;z-index:1}
+.st.hum .c{background:var(--gold);border-color:var(--gold);color:var(--g900);box-shadow:0 0 0 6px rgba(201,164,92,.2)}
+.st b{font-size:13.5px;color:var(--g800);display:block;padding:0 6px}
+.st:not(:last-child)::after{content:"";position:absolute;top:27px;inset-inline-start:calc(50% + 27px);width:calc(100% - 54px);height:2px;background:repeating-linear-gradient(90deg,var(--teal) 0 6px,transparent 6px 12px)}
+.never{display:flex;gap:10px;align-items:center;margin-top:16px;padding:14px;border-radius:14px;background:#FBE9E9;color:#8E2525;font-size:14px;font-weight:600}
+.never .ic{font-size:20px}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1180px){.kpis{grid-template-columns:repeat(3,1fr)}.hw,.gcards{grid-template-columns:repeat(2,1fr)}.igrid{grid-template-columns:1fr 1fr}.igrid .mprof{grid-column:1/-1}}
+@media (max-width:980px){.hero{grid-template-columns:1fr;padding:32px 22px}.windows{grid-template-columns:1fr 1fr}.mgrid,.two,.eco{grid-template-columns:1fr}.appstage{grid-template-columns:1fr}.feat-list{order:2}}
+@media (max-width:640px){.latin{letter-spacing:.32em;font-size:11px}main{padding:18px 16px 30px}.kpis{grid-template-columns:1fr 1fr}.windows,.hw,.gcards,.igrid{grid-template-columns:1fr}.brand small{display:none}.tbtn span{display:none}.hbar{grid-template-columns:90px 1fr 46px}.phone{width:100%;max-width:360px;height:700px}.mpanel{width:auto;inset-inline-end:12px}.donut-wrap{flex-direction:column}.ptimes{grid-template-columns:repeat(5,1fr);gap:4px}.chain{flex-direction:column}.link{flex:0 0 26px;width:4px;height:26px;align-self:center;background:linear-gradient(180deg,var(--teal) 0 40%,#d6e7e2 40%) 0 0/100% 14px repeat-y}.st{min-width:100px}}
+@media print{header.top,.toast-wrap,#gate,#intro,.door,.seal,.no-print{display:none!important}#app{opacity:1}.card{box-shadow:none;break-inside:avoid}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= GATE ================= -->
+<section id="gate" class="screen">
+  <div class="glow"></div>
+  <div class="motes" id="motes"></div>
+  <div class="gate-inner">
+    <div class="lockup anim" id="gateLogo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -1340 3830 1700" role="img" aria-label="المحراب MIHRAB"><defs><linearGradient id="sg0" x1="0" y1="-1300" x2="0" y2="300" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F8EBC6"/><stop offset=".45" stop-color="#E2C37E"/><stop offset="1" stop-color="#A9843F"/></linearGradient></defs><path d="M886 -300 V-540 C886 -800 1054.7 -925 1127 -985 C1199.3 -925 1368 -800 1368 -540 V-300" fill="none" stroke="#5FD0C2" stroke-width="18" stroke-linecap="round" opacity=".75"/><g fill="url(#sg0)"><path d="M672 -300 V-520 C672 -850 981.4 -1100 1127 -1290 C1272.6 -1100 1582 -850 1582 -520 V-300H1438 V-520 C1438 -820 1220.3 -945 1127 -1115 C1033.7 -945 816 -820 816 -520 V-300 Z" fill-rule="evenodd"/><path transform="translate(0 0) scale(1 -1)" d="M271 0Q184 0 134 59Q90 110 90 191V283L235 360V199Q235 166 247.5 153.0Q260 140 292 140H615Q647 140 659.5 153.0Q672 166 672 199V373L817 450V191Q817 98 759 46Q708 0 628 0ZM445 -235Q411 -235 390.5 -214.5Q370 -194 370 -160Q370 -126 390.5 -106.0Q411 -86 445 -86Q478 -86 498.0 -106.0Q518 -126 518 -160Q518 -194 498.0 -214.5Q478 -235 445 -235Z"/><path transform="translate(965 0) scale(1 -1)" d="M90 0V568L235 645V0Z"/><path transform="translate(1297 0) scale(1 -1)" d="M344 140H442V0H330Q307 0 282 5Q259 -126 153 -175Q111 -195 62 -195Q-4 -195 -67 -160V-34Q-15 -63 34 -63Q59 -63 80 -55Q141 -34 141 57V373L286 450V449L287 450V181Q292 140 344 140Z"/><path transform="translate(1712 0) scale(1 -1)" d="M622 140H712V0H621Q544 0 496.5 17.0Q449 34 409 76Q282 0 123 0H-27V140H124Q287 140 385 232Q322 334 237 334Q160 334 59 247V373Q144 468 252 468H254Q334 468 409.0 410.5Q484 353 542 247V194Q525 173 509 155Q544 140 622 140Z"/><path transform="translate(2398 0) scale(1 -1)" d="M601 140H699V0H588Q520 0 475 32Q423 -20 336 -20Q250 -20 198 31Q151 0 85 0H-27V140H71Q103 140 116.0 153.0Q129 166 129 198V226Q129 345 191 410Q246 468 336 468Q439 468 495 393Q543 329 544 226V198Q544 165 556.5 152.5Q569 140 601 140ZM336 120Q399 120 399 229Q399 332 336 332Q274 332 274 229Q274 120 336 120Z"/><path transform="translate(3071 0) scale(1 -1)" d="M-27 0V140H38Q80 140 96.5 157.5Q113 175 113 219V568L258 645V218Q258 116 196 56Q139 0 45 0Z"/><path transform="translate(3419 0) scale(1 -1)" d="M90 0V568L235 645V0Z"/><polygon points="1127.0,-858.0 1143.8,-810.7 1189.2,-832.2 1167.7,-786.8 1215.0,-770.0 1167.7,-753.2 1189.2,-707.8 1143.8,-729.3 1127.0,-682.0 1110.2,-729.3 1064.8,-707.8 1086.3,-753.2 1039.0,-770.0 1086.3,-786.8 1064.8,-832.2 1110.2,-810.7"/></g><g class="hk" fill="#5FD0C2"><path transform="translate(284 112) scale(1 -1)" d="M0 565 45 661 157 682Q144 707 144 736Q144 783 173.5 816.0Q203 849 245 849Q289 849 318.0 817.0Q347 785 347 736Q347 688 318.5 652.0Q290 616 247 610ZM248 713Q266 725 266 744Q266 768 247 768Q228 768 228 744Q228 724 248 713Z"/><path transform="translate(1640 10) scale(1 -1)" d="M0 565 53 678 341 730 288 618Z"/><path transform="translate(2060 5) scale(1 -1)" d="M97 774Q139 764 166.0 730.0Q193 696 193 653Q193 613 167.0 588.5Q141 564 97 564Q53 564 26.5 588.0Q0 612 0 652Q0 695 27.0 729.5Q54 764 97 774ZM97 693Q76 682 76 662Q76 638 96 638Q116 638 116 662Q116 682 97 693Z"/><path transform="translate(2561 21) scale(1 -1)" d="M0 -249 53 -136 341 -84 288 -196Z"/><path transform="translate(3118 -132) scale(1 -1)" d="M97 774Q139 764 166.0 730.0Q193 696 193 653Q193 613 167.0 588.5Q141 564 97 564Q53 564 26.5 588.0Q0 612 0 652Q0 695 27.0 729.5Q54 764 97 774ZM97 693Q76 682 76 662Q76 638 96 638Q116 638 116 662Q116 682 97 693Z"/></g></svg></div>
+    <div class="latin">MIHRAB · SMART MOSQUE</div>
+    <p class="gate-lead" data-t="gateLead">رقمنة بيوت الله… برعايةٍ ذكية تربط الوزارة بالمسجد بالمجتمع</p>
+    <div class="lang-label" data-t="chooseLang">اختر لغتك</div>
+    <div class="langs" id="gateLangs"></div>
+    <div class="gate-actions">
+      <button class="btn-gold" id="enterBtn"><svg class="ic"><use href="#i-play"/></svg><span data-t="enter">ابدأ الرحلة</span></button>
+      <div class="sound-hint"><svg class="ic"><use href="#i-vol"/></svg><span data-t="soundHint">شغّل الصوت لتجربة كاملة</span></div>
+      <button class="link-ghost" id="skipGate" data-t="skipToPlatform">الدخول مباشرة إلى المنصة</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section id="intro" class="screen hidden">
+  <canvas id="introBg" width="72" height="40"></canvas>
+  <video id="introVid" playsinline webkit-playsinline preload="auto"></video>
+  <button class="pill unmute" id="unmute"><svg class="ic"><use href="#i-vol"/></svg><span data-t="soundHint">شغّل الصوت لتجربة كاملة</span></button>
+  <div class="vignette"></div>
+  <div class="intro-brand" id="introMini"></div>
+  <div class="intro-ctrl">
+    <button class="pill" id="muteBtn"><svg class="ic"><use href="#i-vol"/></svg></button>
+    <button class="pill" id="skipIntro"><span data-t="skip"></span><svg class="ic flip"><use href="#i-next"/></svg></button>
+  </div>
+  <div class="cap" data-in="0.7" data-out="4.6"><h2 data-t="cap1"></h2><div class="line"></div></div>
+  <div class="cap" data-in="5.2" data-out="9.4"><div class="verse">﴿ فِي بُيُوتٍ أَذِنَ اللَّهُ أَن تُرْفَعَ وَيُذْكَرَ فِيهَا اسْمُهُ ﴾</div><h2 data-t="cap2" style="font-size:clamp(18px,2.6vw,28px)"></h2><div class="ref" data-t="verseRef"></div></div>
+  <div class="cap" data-in="9.9" data-out="12.9"><h2 data-t="cap3"></h2><div class="line"></div></div>
+  <div class="final" id="final">
+    <div class="lockup" id="finalLogo"></div>
+    <div class="latin" style="opacity:1;animation:none;margin-top:6px">MIHRAB · SMART MOSQUE</div>
+    <div class="tg" data-t="tagline"></div>
+    <button class="btn-gold" id="goBtn"><span data-t="goMihrab"></span><svg class="ic flip"><use href="#i-next"/></svg></button>
+  </div>
+  <div class="progress"><i id="prog"></i></div>
+</section>
+
+<div class="door l"></div><div class="door r"></div><div class="seal" id="seal"></div>
+
+<!-- ================= APP ================= -->
+<div id="app">
+  <header class="top">
+    <div class="bar">
+      <div class="brand" data-act="nav" data-v="home"><span id="hdrLogo"></span><small>MIHRAB<br>SMART MOSQUE</small></div>
+      <div class="tools">
+        <button class="tbtn" id="replayBtn"><svg class="ic"><use href="#i-film"/></svg><span data-t="replay"></span></button>
+        <select class="sel" id="langSel" aria-label="Language"></select>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs"></nav>
+  </header>
+  <main id="main"></main>
+  <footer class="credit"><span class="d" id="credit"></span><span class="demo" data-t="demoNote"></span></footer>
+</div>
+<div class="toast-wrap" id="toasts"></div>
+
+<!-- ================= ICONS ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" fill="currentColor" stroke="none"/><rect x="14" y="4" width="4" height="16" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-vol" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></symbol>
+  <symbol id="i-volx" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-gov" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10M9.5 21V10M14.5 21V10M19 21V10"/><path d="M2 10l10-7 10 7z"/></symbol>
+  <symbol id="i-mosque" viewBox="0 0 24 24"><path d="M4 21V12h16v9"/><path d="M6 12a6 6 0 0 1 12 0"/><path d="M12 6V3"/><path d="M2 21h20"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="11" y1="18" x2="13" y2="18"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="i-act" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></symbol>
+</svg>
+
+<script id="introData" type="text/plain"></script>
+<script id="introWebm" type="text/plain"></script>
+<script>
+"use strict";
+/* ===================== I18N ===================== */
+const LANGS=[["ar","العربية"],["en","English"],["ur","اردو"],["fil","Filipino"],["bn","বাংলা"],["id","Bahasa Indonesia"],["fr","Français"],["es","Español"]];
+const RTL={ar:1,ur:1};
+const LI={ar:0,en:1,ur:2,fil:3,bn:4,id:5,fr:6,es:7};
+const D={
+gateLead:["رقمنة بيوت الله… برعايةٍ ذكية تربط الوزارة بالمسجد بالمجتمع","Digitizing the Houses of Allah — intelligent care that connects the Ministry, the mosque and the community","اللہ کے گھروں کی ڈیجیٹل نگہداشت — وزارت، مسجد اور معاشرے کو جوڑنے والا ذہین نظام","Digital na pangangalaga sa mga Bahay ni Allah — nag-uugnay sa Ministri, sa masjid at sa komunidad","আল্লাহর ঘরের ডিজিটাল যত্ন — মন্ত্রণালয়, মসজিদ ও সমাজকে যুক্ত করার স্মার্ট ব্যবস্থা","Digitalisasi Rumah-Rumah Allah — perawatan cerdas yang menghubungkan Kementerian, masjid, dan masyarakat","Numériser les Maisons d’Allah — un soin intelligent qui relie le Ministère, la mosquée et la communauté","Digitalizar las Casas de Allah — un cuidado inteligente que une al Ministerio, la mezquita y la comunidad"],
+chooseLang:["اختر لغتك","Choose your language","اپنی زبان منتخب کریں","Piliin ang iyong wika","আপনার ভাষা বেছে নিন","Pilih bahasa Anda","Choisissez votre langue","Elige tu idioma"],
+enter:["ابدأ الرحلة","Begin the journey","سفر شروع کریں","Simulan ang paglalakbay","যাত্রা শুরু করুন","Mulai perjalanan","Commencer le voyage","Comenzar el viaje"],
+soundHint:["شغّل الصوت لتجربة كاملة","Turn your sound on for the full experience","مکمل تجربے کے لیے آواز آن کریں","I-on ang tunog para sa buong karanasan","পূর্ণ অভিজ্ঞতার জন্য সাউন্ড চালু করুন","Nyalakan suara untuk pengalaman penuh","Activez le son pour une expérience complète","Activa el sonido para la experiencia completa"],
+skipToPlatform:["الدخول مباشرة إلى المنصة","Go straight to the platform","براہِ راست پلیٹ فارم پر جائیں","Dumiretso sa plataporma","সরাসরি প্ল্যাটফর্মে যান","Langsung ke platform","Accéder directement à la plateforme","Ir directamente a la plataforma"],
+skip:["تخطَّ","Skip","چھوڑیں","Laktawan","এড়িয়ে যান","Lewati","Passer","Saltar"],
+cap1:["من فوق السحاب… تبدأ الحكاية","Above the clouds, the story begins","بادلوں کے اوپر سے… کہانی شروع ہوتی ہے","Mula sa itaas ng ulap, nagsisimula ang kuwento","মেঘের ওপর থেকে… গল্পের শুরু","Dari atas awan, kisah ini bermula","Au-dessus des nuages, l’histoire commence","Sobre las nubes, comienza la historia"],
+cap2:["رعاية بيوت الله… بذكاء","Caring for the Houses of Allah — intelligently","اللہ کے گھروں کی دیکھ بھال… ذہانت کے ساتھ","Pag-aalaga sa mga Bahay ni Allah — nang matalino","আল্লাহর ঘরের যত্ন — বুদ্ধিমত্তার সাথে","Merawat Rumah-Rumah Allah — dengan cerdas","Prendre soin des Maisons d’Allah — intelligemment","Cuidar las Casas de Allah — con inteligencia"],
+verseRef:["سورة النور ٣٦","Surah An-Nur 24:36","سورۃ النور ٣٦","Surah An-Nur 24:36","সূরা আন-নূর ২৪:৩৬","QS An-Nur 24:36","Sourate An-Nour 24:36","Sura An-Nur 24:36"],
+cap3:["كل مسجد… متصل، جاهز، مسموع","Every mosque: connected, ready, heard","ہر مسجد… منسلک، تیار، سنائی دینے والی","Bawat masjid: konektado, handa, naririnig","প্রতিটি মসজিদ: সংযুক্ত, প্রস্তুত, শ্রুত","Setiap masjid: terhubung, siap, terdengar","Chaque mosquée : connectée, prête, entendue","Cada mezquita: conectada, lista, escuchada"],
+tagline:["منصة المساجد الذكية","The Smart Mosque Platform","اسمارٹ مسجد پلیٹ فارم","Ang Smart Mosque Platform","স্মার্ট মসজিদ প্ল্যাটফর্ম","Platform Masjid Cerdas","La plateforme des mosquées intelligentes","La plataforma de mezquitas inteligentes"],
+goMihrab:["الذهاب إلى المِحراب","Enter the Mihrab","محراب کی طرف چلیں","Pumasok sa Mihrab","মিহরাবে প্রবেশ করুন","Masuk ke Mihrab","Entrer dans le Mihrab","Entrar al Mihrab"],
+replay:["إعادة المقدمة","Replay intro","تعارف دوبارہ چلائیں","Ulitin ang intro","ইন্ট্রো আবার চালান","Putar ulang intro","Revoir l’intro","Repetir la intro"],
+nav_home:["الرئيسية","Home","ہوم","Home","হোম","Beranda","Accueil","Inicio"],
+nav_ministry:["لوحة الوزارة","Ministry Dashboard","وزارت ڈیش بورڈ","Dashboard ng Ministri","মন্ত্রণালয় ড্যাশবোর্ড","Dasbor Kementerian","Tableau du Ministère","Panel del Ministerio"],
+nav_imam:["لوحة المسجد والإمام","Mosque & Imam Dashboard","مسجد و امام ڈیش بورڈ","Dashboard ng Masjid at Imam","মসজিদ ও ইমাম ড্যাশবোর্ড","Dasbor Masjid & Imam","Tableau Mosquée & Imam","Panel de Mezquita e Imán"],
+nav_app:["تطبيق المستفيد","Beneficiary App","مستفید ایپ","App ng Benepisyaryo","উপকারভোগী অ্যাপ","Aplikasi Jamaah","Application des fidèles","App del beneficiario"],
+nav_iot:["العتاد وإنترنت الأشياء","Hardware & IoT","ہارڈویئر اور IoT","Hardware at IoT","হার্ডওয়্যার ও IoT","Perangkat & IoT","Matériel & IoT","Hardware e IoT"],
+nav_gov:["الحوكمة والخصوصية","Governance & Privacy","گورننس اور رازداری","Pamamahala at Privacy","গভর্ন্যান্স ও গোপনীয়তা","Tata Kelola & Privasi","Gouvernance & confidentialité","Gobernanza y privacidad"],
+heroEyebrow:["منصة وطنية لرقمنة المساجد","A national platform for digital mosques","مساجد کی ڈیجیٹلائزیشن کا قومی پلیٹ فارم","Pambansang plataporma para sa digital na masjid","মসজিদ ডিজিটালাইজেশনের জাতীয় প্ল্যাটফর্ম","Platform nasional digitalisasi masjid","Plateforme nationale des mosquées numériques","Plataforma nacional de mezquitas digitales"],
+heroTitle:["منظومة واحدة تربط <em>الوزارة</em> بـ<em>المسجد</em> بـ<em>المجتمع</em>","One ecosystem connecting the <em>Ministry</em>, the <em>mosque</em> and the <em>community</em>","ایک نظام جو <em>وزارت</em>، <em>مسجد</em> اور <em>معاشرے</em> کو جوڑتا ہے","Isang ecosystem na nag-uugnay sa <em>Ministri</em>, <em>masjid</em> at <em>komunidad</em>","একটি ইকোসিস্টেম — <em>মন্ত্রণালয়</em>, <em>মসজিদ</em> ও <em>সমাজ</em> একসূত্রে","Satu ekosistem yang menghubungkan <em>Kementerian</em>, <em>masjid</em>, dan <em>masyarakat</em>","Un écosystème qui relie le <em>Ministère</em>, la <em>mosquée</em> et la <em>communauté</em>","Un ecosistema que une al <em>Ministerio</em>, la <em>mezquita</em> y la <em>comunidad</em>"],
+heroSub:["يرصد مِحراب جاهزية المساجد وأنظمة الصوت لحظياً عبر إنترنت الأشياء، ويحفّز الأئمة بأصداء المصلين، ويقرّب المسجد من كل مصلٍّ — حتى كبار السن في بيوتهم.","Mihrab monitors mosque readiness and sound systems in real time through IoT, encourages imams with worshippers’ feedback, and brings the mosque closer to everyone — even elders at home.","محراب IoT کے ذریعے مساجد کی تیاری اور صوتی نظام کی لمحہ بہ لمحہ نگرانی کرتا ہے، نمازیوں کے تاثرات سے ائمہ کی حوصلہ افزائی کرتا ہے، اور مسجد کو ہر نمازی کے قریب لاتا ہے — گھر میں موجود بزرگوں تک بھی۔","Sinusubaybayan ng Mihrab ang kahandaan ng mga masjid at sound system sa real time gamit ang IoT, hinihikayat ang mga imam sa pamamagitan ng puna ng mga nagdarasal, at inilalapit ang masjid sa lahat — pati sa matatanda sa bahay.","মিহরাব IoT-এর মাধ্যমে মসজিদের প্রস্তুতি ও সাউন্ড সিস্টেম রিয়েল-টাইমে পর্যবেক্ষণ করে, মুসল্লিদের মতামতে ইমামদের উৎসাহ দেয় এবং মসজিদকে সবার কাছে নিয়ে আসে — ঘরে থাকা বয়স্কদের কাছেও।","Mihrab memantau kesiapan masjid dan sistem suara secara real time melalui IoT, menyemangati imam dengan umpan balik jamaah, dan mendekatkan masjid kepada semua — bahkan lansia di rumah.","Mihrab surveille en temps réel l’état des mosquées et de leurs systèmes audio grâce à l’IoT, encourage les imams par les retours des fidèles et rapproche la mosquée de chacun — même des aînés chez eux.","Mihrab supervisa en tiempo real la preparación de las mezquitas y sus sistemas de sonido mediante IoT, motiva a los imanes con las opiniones de los fieles y acerca la mezquita a todos — incluso a los mayores en casa."],
+st_mosques:["مسجد مربوط","Connected mosques","منسلک مساجد","Konektadong masjid","সংযুক্ত মসজিদ","Masjid terhubung","Mosquées connectées","Mezquitas conectadas"],
+st_ready:["الجاهزية التشغيلية","Operational readiness","آپریشنل تیاری","Kahandaan sa operasyon","পরিচালন প্রস্তুতি","Kesiapan operasional","Disponibilité opérationnelle","Disponibilidad operativa"],
+st_audio:["أنظمة صوت نشطة","Active audio systems","فعال صوتی نظام","Aktibong sound system","সক্রিয় সাউন্ড সিস্টেম","Sistem suara aktif","Systèmes audio actifs","Sistemas de sonido activos"],
+st_faults:["أعطال مفتوحة","Open faults","کھلی خرابیاں","Bukas na sira","খোলা ত্রুটি","Gangguan terbuka","Pannes ouvertes","Averías abiertas"],
+st_review:["بانتظار مراجعة بشرية","Awaiting human review","انسانی جائزے کے منتظر","Naghihintay ng pagsusuri ng tao","মানব পর্যালোচনার অপেক্ষায়","Menunggu tinjauan manusia","En attente de revue humaine","En espera de revisión humana"],
+st_users:["مستفيد مسجّل","Registered beneficiaries","رجسٹرڈ مستفیدین","Rehistradong benepisyaryo","নিবন্ধিত উপকারভোগী","Jamaah terdaftar","Fidèles inscrits","Beneficiarios registrados"],
+windows:["نوافذ المنصة","Platform windows","پلیٹ فارم کی ونڈوز","Mga window ng plataporma","প্ল্যাটফর্মের উইন্ডো","Jendela platform","Les fenêtres de la plateforme","Ventanas de la plataforma"],
+open:["افتح النافذة","Open window","ونڈو کھولیں","Buksan","খুলুন","Buka","Ouvrir","Abrir"],
+w_ministry:["إشراف مركزي، خريطة تفاعلية، تنبيهات آلية، تحليلات وتقارير","Central oversight, interactive map, automated alerts, analytics and reports","مرکزی نگرانی، انٹرایکٹو نقشہ، خودکار الرٹس، تجزیات اور رپورٹس","Sentral na pangangasiwa, interactive na mapa, awtomatikong alerto, analytics at ulat","কেন্দ্রীয় তদারকি, ইন্টারঅ্যাক্টিভ মানচিত্র, স্বয়ংক্রিয় সতর্কতা, বিশ্লেষণ ও প্রতিবেদন","Pengawasan pusat, peta interaktif, peringatan otomatis, analitik dan laporan","Supervision centrale, carte interactive, alertes automatiques, analyses et rapports","Supervisión central, mapa interactivo, alertas automáticas, análisis e informes"],
+w_imam:["الملف التعريفي، الحالة التقنية، البث الرقمي، السجل، وأصداء المصلين","Profile, technical status, digital broadcast, logs and worshippers’ echoes","پروفائل، تکنیکی حالت، ڈیجیٹل نشریات، لاگ اور نمازیوں کی صدائیں","Profile, teknikal na status, digital broadcast, log at tinig ng mga nagdarasal","প্রোফাইল, প্রযুক্তিগত অবস্থা, ডিজিটাল সম্প্রচার, লগ ও মুসল্লিদের প্রতিধ্বনি","Profil, status teknis, siaran digital, log, dan gema jamaah","Profil, état technique, diffusion numérique, journal et échos des fidèles","Perfil, estado técnico, emisión digital, registro y ecos de los fieles"],
+w_app:["اكتشف المساجد، اعرف المواقيت، استمع للبث، وقيّم بكلمة طيبة","Discover mosques, check prayer times, listen live and leave a kind word","مساجد تلاش کریں، اوقات دیکھیں، براہِ راست سنیں اور اچھی رائے دیں","Tumuklas ng masjid, tingnan ang oras ng dasal, makinig nang live at mag-iwan ng mabuting salita","মসজিদ খুঁজুন, নামাজের সময় দেখুন, সরাসরি শুনুন ও সুন্দর মতামত দিন","Temukan masjid, cek waktu salat, dengarkan langsung, dan beri ulasan baik","Découvrez les mosquées, les horaires, écoutez en direct et laissez un mot bienveillant","Descubre mezquitas, consulta horarios, escucha en vivo y deja una palabra amable"],
+w_iot:["الجهاز الوسيط، حساسات الصوت، وأجهزة الاستقبال المنزلية لكبار السن","Gateway, audio sensors and home receivers for the elderly","گیٹ وے، صوتی سینسر اور بزرگوں کے لیے گھریلو ریسیور","Gateway, audio sensor at home receiver para sa matatanda","গেটওয়ে, অডিও সেন্সর ও বয়স্কদের জন্য হোম রিসিভার","Gateway, sensor audio, dan penerima rumah untuk lansia","Passerelle, capteurs audio et récepteurs à domicile pour les aînés","Pasarela, sensores de audio y receptores domésticos para mayores"],
+w_gov:["مراجعة بشرية، خصوصية كاملة، تشفير طرفي، ولا عقوبات آلية","Human review, full privacy, end-to-end encryption and no automated penalties","انسانی جائزہ، مکمل رازداری، اینڈ ٹو اینڈ انکرپشن اور کوئی خودکار سزا نہیں","Pagsusuri ng tao, buong privacy, end-to-end encryption at walang awtomatikong parusa","মানব পর্যালোচনা, পূর্ণ গোপনীয়তা, এন্ড-টু-এন্ড এনক্রিপশন, কোনো স্বয়ংক্রিয় শাস্তি নয়","Tinjauan manusia, privasi penuh, enkripsi ujung ke ujung, tanpa sanksi otomatis","Revue humaine, confidentialité totale, chiffrement de bout en bout, aucune sanction automatique","Revisión humana, privacidad total, cifrado de extremo a extremo y sin sanciones automáticas"],
+eco_title:["كيف تعمل المنظومة","How the ecosystem works","نظام کیسے کام کرتا ہے","Paano gumagana ang ecosystem","ইকোসিস্টেম কীভাবে কাজ করে","Cara kerja ekosistem","Comment fonctionne l’écosystème","Cómo funciona el ecosistema"],
+eco_m:["الوزارة","Ministry","وزارت","Ministri","মন্ত্রণালয়","Kementerian","Ministère","Ministerio"],
+eco_q:["المسجد","Mosque","مسجد","Masjid","মসজিদ","Masjid","Mosquée","Mezquita"],
+eco_c:["المجتمع","Community","معاشرہ","Komunidad","সমাজ","Masyarakat","Communauté","Comunidad"],
+eco_m_d:["رقابة ذكية مركزية على الجاهزية وأنظمة الصوت، مع مراجعة بشرية لكل حالة.","Smart central oversight of readiness and sound systems, with human review for every case.","تیاری اور صوتی نظام کی مرکزی ذہین نگرانی، ہر کیس کا انسانی جائزہ۔","Matalinong sentral na pangangasiwa, may pagsusuri ng tao sa bawat kaso.","প্রস্তুতি ও সাউন্ড সিস্টেমের স্মার্ট কেন্দ্রীয় তদারকি, প্রতিটি ক্ষেত্রে মানব পর্যালোচনা।","Pengawasan pusat yang cerdas, dengan tinjauan manusia untuk setiap kasus.","Supervision centrale intelligente, avec revue humaine de chaque cas.","Supervisión central inteligente, con revisión humana de cada caso."],
+eco_q_d:["جهاز مِحراب الوسيط يرصد حالة الصوت والشبكة، والإمام يدير مسجده من لوحته.","The Mihrab gateway monitors sound and network; the imam runs the mosque from his dashboard.","محراب گیٹ وے آواز اور نیٹ ورک کی نگرانی کرتا ہے، امام اپنے ڈیش بورڈ سے مسجد چلاتے ہیں۔","Binabantayan ng gateway ang tunog at network; pinamamahalaan ng imam ang masjid mula sa dashboard.","মিহরাব গেটওয়ে সাউন্ড ও নেটওয়ার্ক পর্যবেক্ষণ করে; ইমাম ড্যাশবোর্ড থেকে মসজিদ পরিচালনা করেন।","Gateway Mihrab memantau suara dan jaringan; imam mengelola masjid dari dasbornya.","La passerelle surveille le son et le réseau ; l’imam gère sa mosquée depuis son tableau.","La pasarela vigila el sonido y la red; el imán gestiona su mezquita desde su panel."],
+eco_c_d:["المصلون يكتشفون ويستمعون ويقيّمون، وكبار السن يتصلون بمسجدهم بضغطة زر.","Worshippers discover, listen and rate; elders connect to their mosque with one press.","نمازی تلاش کرتے، سنتے اور رائے دیتے ہیں؛ بزرگ ایک بٹن سے مسجد سے جڑتے ہیں۔","Tumutuklas, nakikinig at nagre-rate ang mga nagdarasal; isang pindot lang para sa matatanda.","মুসল্লিরা খোঁজেন, শোনেন ও মূল্যায়ন করেন; বয়স্করা এক চাপে মসজিদের সাথে যুক্ত হন।","Jamaah menemukan, mendengar, dan menilai; lansia terhubung dengan satu tombol.","Les fidèles découvrent, écoutent et évaluent ; les aînés se connectent d’une seule touche.","Los fieles descubren, escuchan y valoran; los mayores se conectan con un solo botón."],
+eco_l1:["بيانات الحالة","Status data","حالت کا ڈیٹا","Datos ng status","স্ট্যাটাস ডেটা","Data status","Données d’état","Datos de estado"],
+eco_l2:["الأصداء والتقييم","Echoes & ratings","صدائیں اور ریٹنگ","Puna at rating","প্রতিধ্বনি ও রেটিং","Gema & penilaian","Échos & avis","Ecos y valoraciones"],
+eco_l3:["الاعتماد والإشراف","Approval & oversight","منظوری اور نگرانی","Pag-apruba at pangangasiwa","অনুমোদন ও তদারকি","Persetujuan & pengawasan","Validation & supervision","Aprobación y supervisión"],
+live:["مباشر","Live","براہِ راست","Live","লাইভ","Langsung","En direct","En vivo"],
+map_title:["الخريطة التفاعلية للمساجد","Interactive mosque map","مساجد کا انٹرایکٹو نقشہ","Interactive na mapa ng masjid","মসজিদের ইন্টারঅ্যাক্টিভ মানচিত্র","Peta masjid interaktif","Carte interactive des mosquées","Mapa interactivo de mezquitas"],
+map_sample:["عينة تمثيلية من المساجد المربوطة","A representative sample of connected mosques","منسلک مساجد کا نمائندہ نمونہ","Kinatawang sample ng mga konektadong masjid","সংযুক্ত মসজিদের প্রতিনিধিত্বমূলক নমুনা","Sampel representatif masjid terhubung","Échantillon représentatif des mosquées connectées","Muestra representativa de mezquitas conectadas"],
+all_regions:["كل المناطق","All regions","تمام علاقے","Lahat ng rehiyon","সব অঞ্চল","Semua wilayah","Toutes les régions","Todas las regiones"],
+s_ok:["سليم","Healthy","درست","Maayos","সুস্থ","Normal","Opérationnelle","Operativa"],
+s_warn:["تحذير","Warning","انتباہ","Babala","সতর্কতা","Peringatan","Alerte","Advertencia"],
+s_fault:["عطل","Fault","خرابی","Sira","ত্রুটি","Gangguan","Panne","Avería"],
+readiness:["الجاهزية","Readiness","تیاری","Kahandaan","প্রস্তুতি","Kesiapan","Disponibilité","Disponibilidad"],
+last_signal:["آخر إشارة","Last signal","آخری سگنل","Huling signal","শেষ সংকেত","Sinyal terakhir","Dernier signal","Última señal"],
+region:["المنطقة","Region","علاقہ","Rehiyon","অঞ্চল","Wilayah","Région","Región"],
+status:["الحالة","Status","حالت","Status","অবস্থা","Status","État","Estado"],
+alerts_title:["التنبيهات والبلاغات الآلية","Automated alerts & reports","خودکار الرٹس اور رپورٹس","Mga awtomatikong alerto","স্বয়ংক্রিয় সতর্কতা ও রিপোর্ট","Peringatan & laporan otomatis","Alertes et signalements automatiques","Alertas y reportes automáticos"],
+review_note:["المؤشرات الآلية لا تُعدّ إثباتاً لمخالفة أو لغياب الإمام؛ تُحال جميع الحالات غير المؤكدة إلى مراجعة بشرية.","Automated indicators are not proof of a violation or of the imam’s absence; every unconfirmed case is referred to human review.","خودکار اشارے خلاف ورزی یا امام کی غیر حاضری کا ثبوت نہیں؛ ہر غیر مصدقہ معاملہ انسانی جائزے کے لیے بھیجا جاتا ہے۔","Ang mga awtomatikong indikasyon ay hindi patunay ng paglabag o pagliban ng imam; bawat hindi kumpirmadong kaso ay sinusuri ng tao.","স্বয়ংক্রিয় সূচক লঙ্ঘন বা ইমামের অনুপস্থিতির প্রমাণ নয়; প্রতিটি অনিশ্চিত ঘটনা মানব পর্যালোচনায় পাঠানো হয়।","Indikator otomatis bukan bukti pelanggaran atau ketidakhadiran imam; setiap kasus yang belum pasti dirujuk ke tinjauan manusia.","Les indicateurs automatiques ne prouvent ni une infraction ni l’absence de l’imam ; tout cas non confirmé est soumis à une revue humaine.","Los indicadores automáticos no prueban una infracción ni la ausencia del imán; todo caso no confirmado pasa a revisión humana."],
+a_noaudio:["لم يُرصد نشاط صوتي في وقت الإقامة المجدول","No audio activity detected at the scheduled iqama","مقررہ اقامت کے وقت کوئی صوتی سرگرمی نہیں ملی","Walang audio na natukoy sa nakatakdang iqama","নির্ধারিত ইকামতের সময় কোনো অডিও শনাক্ত হয়নি","Tidak ada aktivitas suara saat jadwal iqamah","Aucune activité audio détectée à l’iqama prévue","Sin actividad de audio en la iqama programada"],
+a_offline:["انقطاع اتصال الجهاز الوسيط","Gateway connection lost","گیٹ وے کا رابطہ منقطع","Nawala ang koneksyon ng gateway","গেটওয়ের সংযোগ বিচ্ছিন্ন","Koneksi gateway terputus","Connexion de la passerelle perdue","Conexión de la pasarela perdida"],
+a_mic:["ضعف إشارة المايكروفون الرئيسي","Weak main microphone signal","مرکزی مائیکروفون کا کمزور سگنل","Mahinang signal ng pangunahing mikropono","প্রধান মাইক্রোফোনের দুর্বল সংকেত","Sinyal mikrofon utama lemah","Signal faible du micro principal","Señal débil del micrófono principal"],
+a_power:["تذبذب في مزود الطاقة","Power supply fluctuation","بجلی کی فراہمی میں اتار چڑھاؤ","Pabagu-bagong supply ng kuryente","বিদ্যুৎ সরবরাহে ওঠানামা","Fluktuasi catu daya","Fluctuation de l’alimentation","Fluctuación de la alimentación"],
+col_time:["الوقت","Time","وقت","Oras","সময়","Waktu","Heure","Hora"],
+col_mosque:["المسجد","Mosque","مسجد","Masjid","মসজিদ","Masjid","Mosquée","Mezquita"],
+col_alert:["التنبيه","Alert","الرٹ","Alerto","সতর্কতা","Peringatan","Alerte","Alerta"],
+col_action:["الإجراء","Action","کارروائی","Aksyon","পদক্ষেপ","Tindakan","Action","Acción"],
+st_pending:["بانتظار المراجعة","Pending review","جائزے کا منتظر","Naghihintay ng pagsusuri","পর্যালোচনার অপেক্ষায়","Menunggu tinjauan","En attente de revue","Pendiente de revisión"],
+st_assigned:["أُحيل لمراقب","Assigned to inspector","معائنہ کار کو تفویض","Itinalaga sa inspektor","পরিদর্শকের কাছে পাঠানো","Diserahkan ke pengawas","Confié à un inspecteur","Asignado a inspector"],
+st_techfault:["عطل فني مؤكد","Technical fault confirmed","تکنیکی خرابی کی تصدیق","Kumpirmadong teknikal na sira","প্রযুক্তিগত ত্রুটি নিশ্চিত","Gangguan teknis terkonfirmasi","Panne technique confirmée","Avería técnica confirmada"],
+st_excused:["عذر مقبول","Valid excuse","معقول عذر","Katanggap-tanggap na dahilan","গ্রহণযোগ্য কারণ","Uzur diterima","Excuse valable","Excusa válida"],
+st_resolved:["تمت المعالجة","Resolved","حل ہو گیا","Nalutas","সমাধান হয়েছে","Selesai","Résolu","Resuelto"],
+act_assign:["إحالة","Assign","تفویض","Italaga","পাঠান","Rujuk","Confier","Asignar"],
+act_fault:["عطل فني","Tech fault","تکنیکی خرابی","Teknikal","প্রযুক্তিগত","Teknis","Technique","Técnica"],
+act_excuse:["عذر","Excuse","عذر","Dahilan","কারণ","Uzur","Excuse","Excusa"],
+act_resolve:["معالجة","Resolve","حل کریں","Lutasin","সমাধান","Selesaikan","Résoudre","Resolver"],
+analytics_title:["تصنيف الأعطال","Fault categories","خرابیوں کی درجہ بندی","Uri ng sira","ত্রুটির শ্রেণি","Kategori gangguan","Catégories de pannes","Categorías de averías"],
+cat_audio:["أنظمة الصوت","Audio systems","صوتی نظام","Sound system","সাউন্ড সিস্টেম","Sistem suara","Systèmes audio","Sistemas de sonido"],
+cat_net:["الاتصال","Connectivity","رابطہ","Koneksyon","সংযোগ","Konektivitas","Connectivité","Conectividad"],
+cat_ops:["التشغيل","Operations","آپریشن","Operasyon","পরিচালনা","Operasional","Exploitation","Operación"],
+trend_title:["الجاهزية التشغيلية – آخر 30 يوماً","Operational readiness — last 30 days","آپریشنل تیاری — پچھلے 30 دن","Kahandaan — huling 30 araw","পরিচালন প্রস্তুতি — গত ৩০ দিন","Kesiapan operasional — 30 hari terakhir","Disponibilité — 30 derniers jours","Disponibilidad — últimos 30 días"],
+region_title:["الجاهزية حسب المنطقة","Readiness by region","علاقہ وار تیاری","Kahandaan ayon sa rehiyon","অঞ্চলভিত্তিক প্রস্তুতি","Kesiapan per wilayah","Disponibilité par région","Disponibilidad por región"],
+reports_title:["نظام التقارير","Reports","رپورٹس","Mga ulat","প্রতিবেদন","Laporan","Rapports","Informes"],
+reports_d:["صفِّ البيانات حسب المنطقة والفترة والحالة، ثم صدّر تقريراً دورياً متكاملاً.","Filter by region, period and status, then export a complete periodic report.","علاقہ، مدت اور حالت کے لحاظ سے فلٹر کریں اور مکمل رپورٹ برآمد کریں۔","I-filter ayon sa rehiyon, panahon at status, saka i-export ang buong ulat.","অঞ্চল, সময়কাল ও অবস্থা অনুযায়ী ফিল্টার করে পূর্ণ প্রতিবেদন রপ্তানি করুন।","Saring per wilayah, periode, dan status, lalu ekspor laporan lengkap.","Filtrez par région, période et état, puis exportez un rapport complet.","Filtra por región, periodo y estado, y exporta un informe completo."],
+p_week:["أسبوعي","Weekly","ہفتہ وار","Lingguhan","সাপ্তাহিক","Mingguan","Hebdomadaire","Semanal"],
+p_month:["شهري","Monthly","ماہانہ","Buwanan","মাসিক","Bulanan","Mensuel","Mensual"],
+p_q:["ربع سنوي","Quarterly","سہ ماہی","Quarterly","ত্রৈমাসিক","Triwulanan","Trimestriel","Trimestral"],
+all:["الكل","All","سب","Lahat","সব","Semua","Tous","Todos"],
+export_csv:["تصدير CSV","Export CSV","CSV برآمد کریں","I-export ang CSV","CSV রপ্তানি","Ekspor CSV","Exporter CSV","Exportar CSV"],
+print_rep:["طباعة التقرير","Print report","رپورٹ پرنٹ کریں","I-print ang ulat","প্রতিবেদন প্রিন্ট","Cetak laporan","Imprimer le rapport","Imprimir informe"],
+bc_requests:["طلبات البث المباشر","Live broadcast requests","براہِ راست نشریات کی درخواستیں","Mga hiling sa live broadcast","সরাসরি সম্প্রচারের অনুরোধ","Permohonan siaran langsung","Demandes de diffusion en direct","Solicitudes de emisión en vivo"],
+approve:["اعتماد","Approve","منظور","Aprubahan","অনুমোদন","Setujui","Valider","Aprobar"],
+reject:["رفض","Decline","مسترد","Tanggihan","প্রত্যাখ্যান","Tolak","Refuser","Rechazar"],
+no_requests:["لا توجد طلبات معلّقة","No pending requests","کوئی زیرِ التوا درخواست نہیں","Walang nakabinbing hiling","কোনো অপেক্ষমাণ অনুরোধ নেই","Tidak ada permohonan tertunda","Aucune demande en attente","No hay solicitudes pendientes"],
+requested_at:["طُلب الساعة","Requested at","درخواست کا وقت","Hiniling noong","অনুরোধের সময়","Diminta pukul","Demandé à","Solicitado a las"],
+type:["التصنيف","Type","قسم","Uri","ধরন","Jenis","Type","Tipo"],
+jami:["جامع","Grand mosque (Jami)","جامع مسجد","Jami (malaking masjid)","জামে মসজিদ","Masjid Jami","Mosquée du vendredi (Jami)","Mezquita mayor (Yami)"],
+imam:["الإمام","Imam","امام","Imam","ইমাম","Imam","Imam","Imán"],
+muezzin:["المؤذن","Muezzin","مؤذن","Muezzin","মুয়াজ্জিন","Muazin","Muezzin","Almuédano"],
+capacity:["الطاقة الاستيعابية","Capacity","گنجائش","Kapasidad","ধারণক্ষমতা","Kapasitas","Capacité","Capacidad"],
+worshippers:["مصلٍّ","worshippers","نمازی","nagdarasal","মুসল্লি","jamaah","fidèles","fieles"],
+prayer_times:["مواقيت الصلاة اليوم","Today’s prayer times","آج کے اوقاتِ نماز","Oras ng dasal ngayon","আজকের নামাজের সময়","Jadwal salat hari ini","Horaires de prière du jour","Horarios de oración de hoy"],
+next_prayer:["الصلاة القادمة","Next prayer","اگلی نماز","Susunod na dasal","পরবর্তী নামাজ","Salat berikutnya","Prochaine prière","Próxima oración"],
+auto_upd:["تُحدَّث تلقائياً","Auto-updated","خودکار اپ ڈیٹ","Awtomatikong update","স্বয়ংক্রিয় হালনাগাদ","Diperbarui otomatis","Mise à jour automatique","Actualización automática"],
+fajr:["الفجر","Fajr","فجر","Fajr","ফজর","Subuh","Fajr","Fajr"],
+dhuhr:["الظهر","Dhuhr","ظہر","Dhuhr","যোহর","Zuhur","Dhuhr","Dhuhr"],
+asr:["العصر","Asr","عصر","Asr","আসর","Asar","Asr","Asr"],
+maghrib:["المغرب","Maghrib","مغرب","Maghrib","মাগরিব","Magrib","Maghrib","Maghrib"],
+isha:["العشاء","Isha","عشاء","Isha","এশা","Isya","Isha","Isha"],
+devices:["الحالة التقنية للأجهزة","Device health","آلات کی تکنیکی حالت","Kalagayan ng mga device","ডিভাইসের অবস্থা","Kondisi perangkat","État des équipements","Estado de los equipos"],
+d_mic1:["المايكروفون الرئيسي","Main microphone","مرکزی مائیکروفون","Pangunahing mikropono","প্রধান মাইক্রোফোন","Mikrofon utama","Micro principal","Micrófono principal"],
+d_mic2:["المايكروفون الاحتياطي","Backup microphone","بیک اپ مائیکروفون","Reserbang mikropono","ব্যাকআপ মাইক্রোফোন","Mikrofon cadangan","Micro de secours","Micrófono de respaldo"],
+d_gw:["جهاز مِحراب الوسيط","Mihrab gateway","محراب گیٹ وے","Mihrab gateway","মিহরাব গেটওয়ে","Gateway Mihrab","Passerelle Mihrab","Pasarela Mihrab"],
+d_power:["مزود الطاقة","Power supply","بجلی کی فراہمی","Supply ng kuryente","বিদ্যুৎ সরবরাহ","Catu daya","Alimentation","Alimentación"],
+d_mixer:["المكسر ومضخم الصوت","Mixer & amplifier","مکسر اور ایمپلیفائر","Mixer at amplifier","মিক্সার ও অ্যামপ্লিফায়ার","Mixer & amplifier","Console & amplificateur","Mezclador y amplificador"],
+online:["يعمل","Online","فعال","Online","চালু","Aktif","En ligne","En línea"],
+broadcast:["البث الرقمي","Digital broadcast","ڈیجیٹل نشریات","Digital broadcast","ডিজিটাল সম্প্রচার","Siaran digital","Diffusion numérique","Emisión digital"],
+bc_off:["البث غير مفعّل","Broadcast off","نشریات بند","Naka-off ang broadcast","সম্প্রচার বন্ধ","Siaran nonaktif","Diffusion désactivée","Emisión desactivada"],
+bc_pending:["بانتظار موافقة الوزارة","Awaiting Ministry approval","وزارت کی منظوری کا انتظار","Naghihintay ng pag-apruba ng Ministri","মন্ত্রণালয়ের অনুমোদনের অপেক্ষায়","Menunggu persetujuan Kementerian","En attente de validation du Ministère","Pendiente de aprobación del Ministerio"],
+bc_on:["البث مُعتمد ومباشر","Approved & on air","منظور شدہ اور براہِ راست","Aprubado at live","অনুমোদিত ও সরাসরি","Disetujui & mengudara","Validée & en direct","Aprobada y en directo"],
+bc_rejected:["لم يُعتمد الطلب","Request not approved","درخواست منظور نہیں ہوئی","Hindi naaprubahan","অনুরোধ অনুমোদিত হয়নি","Permohonan tidak disetujui","Demande non validée","Solicitud no aprobada"],
+bc_request:["طلب تفعيل البث","Request broadcast","نشریات کی درخواست","Humiling ng broadcast","সম্প্রচারের অনুরোধ","Ajukan siaran","Demander la diffusion","Solicitar emisión"],
+bc_cancel:["إلغاء الطلب","Cancel request","درخواست منسوخ کریں","Kanselahin","অনুরোধ বাতিল","Batalkan","Annuler","Cancelar"],
+bc_stop:["إيقاف البث","Stop broadcast","نشریات روکیں","Ihinto ang broadcast","সম্প্রচার বন্ধ করুন","Hentikan siaran","Arrêter la diffusion","Detener emisión"],
+bc_note:["يخضع تفعيل البث للعامة للموافقات التنظيمية من الوزارة","Public broadcasting requires the Ministry’s regulatory approval","عوامی نشریات کے لیے وزارت کی منظوری لازم ہے","Kailangan ng pag-apruba ng Ministri para sa pampublikong broadcast","জনসম্প্রচারের জন্য মন্ত্রণালয়ের অনুমোদন প্রয়োজন","Siaran publik memerlukan persetujuan Kementerian","La diffusion publique requiert la validation du Ministère","La emisión pública requiere aprobación del Ministerio"],
+step_req:["طلب","Request","درخواست","Hiling","অনুরোধ","Ajukan","Demande","Solicitud"],
+step_rev:["مراجعة الوزارة","Ministry review","وزارت کا جائزہ","Pagsusuri","পর্যালোচনা","Tinjauan","Examen","Revisión"],
+step_live:["بث","On air","نشر","Live","সম্প্রচার","Siaran","Antenne","Al aire"],
+logs:["سجل الأحداث","Event log","واقعات کا ریکارڈ","Talaan ng kaganapan","ইভেন্ট লগ","Log kejadian","Journal des événements","Registro de eventos"],
+l1:["تشغيل نظام الصوت تلقائياً قبل الأذان","Sound system auto-started before the adhan","اذان سے پہلے صوتی نظام خودکار طور پر شروع","Awtomatikong binuksan ang sound system bago ang adhan","আজানের আগে সাউন্ড সিস্টেম স্বয়ংক্রিয়ভাবে চালু","Sistem suara menyala otomatis sebelum azan","Système audio démarré automatiquement avant l’adhan","Sonido iniciado automáticamente antes del adhan"],
+l2:["رُصدت إشارة الإقامة – صلاة العصر","Iqama signal detected — Asr","اقامت کا سگنل موصول — عصر","Natukoy ang signal ng iqama — Asr","ইকামতের সংকেত শনাক্ত — আসর","Sinyal iqamah terdeteksi — Asar","Signal d’iqama détecté — Asr","Señal de iqama detectada — Asr"],
+l3:["صيانة دورية للمايكروفونات","Routine microphone maintenance","مائیکروفون کی معمول کی دیکھ بھال","Regular na maintenance ng mikropono","মাইক্রোফোনের নিয়মিত রক্ষণাবেক্ষণ","Perawatan rutin mikrofon","Maintenance de routine des micros","Mantenimiento rutinario de micrófonos"],
+l4:["تحديث مواقيت الصلاة تلقائياً","Prayer times updated automatically","اوقاتِ نماز خودکار طور پر اپ ڈیٹ","Awtomatikong na-update ang oras ng dasal","নামাজের সময় স্বয়ংক্রিয়ভাবে হালনাগাদ","Jadwal salat diperbarui otomatis","Horaires mis à jour automatiquement","Horarios actualizados automáticamente"],
+l5:["فحص اتصال الجهاز الوسيط: ممتاز","Gateway connectivity check: excellent","گیٹ وے رابطہ جانچ: بہترین","Pagsusuri ng koneksyon: napakahusay","গেটওয়ে সংযোগ পরীক্ষা: চমৎকার","Cek koneksi gateway: sangat baik","Test de connexion : excellent","Prueba de conexión: excelente"],
+echoes:["أصداء المصلين","Worshippers’ echoes","نمازیوں کی صدائیں","Tinig ng mga nagdarasal","মুসল্লিদের প্রতিধ্বনি","Gema jamaah","Échos des fidèles","Ecos de los fieles"],
+echo_msg:["تلاوتك هذا الشهر لامست قلوب {n} مصلٍّ… أثرٌ طيب يُكتب لك","Your recitation touched the hearts of {n} worshippers this month — a lasting good deed","اس مہینے آپ کی تلاوت نے {n} نمازیوں کے دل چھوئے — ایک باقی رہنے والا اجر","Naantig ng iyong pagbigkas ang puso ng {n} nagdarasal ngayong buwan","এ মাসে আপনার তিলাওয়াত {n} জন মুসল্লির হৃদয় ছুঁয়েছে — এক স্থায়ী সওয়াব","Bacaan Anda menyentuh hati {n} jamaah bulan ini — amal yang terus mengalir","Votre récitation a touché le cœur de {n} fidèles ce mois-ci","Tu recitación tocó el corazón de {n} fieles este mes"],
+avg_rating:["متوسط التقييم","Average rating","اوسط ریٹنگ","Average na rating","গড় রেটিং","Rata-rata penilaian","Note moyenne","Valoración media"],
+reviews:["تقييم","reviews","آراء","review","মতামত","ulasan","avis","reseñas"],
+badges:["الأوسمة والمستوى","Badges & level","تمغے اور درجہ","Mga badge at antas","ব্যাজ ও স্তর","Lencana & level","Badges & niveau","Insignias y nivel"],
+b1:["صوت السكينة","Voice of Serenity","سکون کی آواز","Tinig ng Katahimikan","প্রশান্তির কণ্ঠ","Suara Ketenangan","Voix de la sérénité","Voz de la serenidad"],
+b2:["جاهزية كاملة","Full readiness","مکمل تیاری","Buong kahandaan","পূর্ণ প্রস্তুতি","Kesiapan penuh","Disponibilité totale","Disponibilidad total"],
+b3:["مسجد نموذجي","Model mosque","مثالی مسجد","Huwarang masjid","আদর্শ মসজিদ","Masjid teladan","Mosquée modèle","Mezquita modelo"],
+b4:["قلب الحي","Heart of the district","محلے کا دل","Puso ng komunidad","এলাকার হৃদয়","Jantung kampung","Cœur du quartier","Corazón del barrio"],
+level:["المستوى","Level","درجہ","Antas","স্তর","Level","Niveau","Nivel"],
+to_next:["إلى المستوى التالي","to next level","اگلے درجے تک","sa susunod na antas","পরবর্তী স্তরে","ke level berikutnya","vers le niveau suivant","al siguiente nivel"],
+search_ph:["ابحث بالمسجد أو الحي أو الإمام","Search mosque, district or imam","مسجد، محلہ یا امام تلاش کریں","Hanapin ang masjid, distrito o imam","মসজিদ, এলাকা বা ইমাম খুঁজুন","Cari masjid, kawasan, atau imam","Mosquée, quartier ou imam","Mezquita, barrio o imán"],
+nearby:["المساجد القريبة","Nearby mosques","قریبی مساجد","Malapit na masjid","কাছাকাছি মসজিদ","Masjid terdekat","Mosquées à proximité","Mezquitas cercanas"],
+no_results:["لا توجد نتائج","No results","کوئی نتیجہ نہیں","Walang resulta","কোনো ফল নেই","Tidak ada hasil","Aucun résultat","Sin resultados"],
+km:["كم","km","کلومیٹر","km","কিমি","km","km","km"],
+pilot:["تجريبي – قيد الاعتماد","Pilot — pending approval","تجرباتی — منظوری زیرِ غور","Pilot — naghihintay ng pag-apruba","পরীক্ষামূলক — অনুমোদন সাপেক্ষ","Uji coba — menunggu persetujuan","Pilote — en cours de validation","Piloto — pendiente de aprobación"],
+live_off_msg:["البث غير مفعّل لهذا المسجد حتى صدور الموافقات التنظيمية من الوزارة","Broadcast isn’t active for this mosque until the Ministry’s regulatory approval","وزارت کی منظوری تک اس مسجد کی نشریات فعال نہیں","Hindi aktibo ang broadcast hangga’t walang pag-apruba ng Ministri","মন্ত্রণালয়ের অনুমোদন না পাওয়া পর্যন্ত সম্প্রচার নিষ্ক্রিয়","Siaran belum aktif hingga ada persetujuan Kementerian","Diffusion inactive jusqu’à la validation du Ministère","Emisión inactiva hasta la aprobación del Ministerio"],
+live_on_msg:["أنت تستمع الآن إلى بث مباشر من المسجد (عرض توضيحي)","You’re listening live from the mosque (demo)","آپ مسجد سے براہِ راست سن رہے ہیں (ڈیمو)","Nakikinig ka nang live mula sa masjid (demo)","আপনি মসজিদ থেকে সরাসরি শুনছেন (ডেমো)","Anda mendengarkan langsung dari masjid (demo)","Vous écoutez la mosquée en direct (démo)","Escuchas en directo desde la mezquita (demo)"],
+directions:["الاتجاهات","Directions","راستہ","Direksyon","দিকনির্দেশ","Petunjuk arah","Itinéraire","Cómo llegar"],
+listen:["استمع","Listen","سنیں","Makinig","শুনুন","Dengar","Écouter","Escuchar"],
+rate:["قيّم","Rate","رائے دیں","I-rate","মূল্যায়ন","Nilai","Évaluer","Valorar"],
+r_recit:["التلاوة","Recitation","تلاوت","Pagbigkas","তিলাওয়াত","Bacaan","Récitation","Recitación"],
+r_clean:["النظافة","Cleanliness","صفائی","Kalinisan","পরিচ্ছন্নতা","Kebersihan","Propreté","Limpieza"],
+r_sound:["جودة الصوت","Sound quality","آواز کا معیار","Kalidad ng tunog","শব্দের মান","Kualitas suara","Qualité du son","Calidad del sonido"],
+comment_ph:["اكتب كلمة طيبة للإمام…","Write a kind word for the imam…","امام کے لیے اچھی بات لکھیں…","Sumulat ng mabuting salita para sa imam…","ইমামের জন্য একটি সুন্দর কথা লিখুন…","Tulis kata baik untuk imam…","Écrivez un mot bienveillant à l’imam…","Escribe una palabra amable para el imán…"],
+send:["إرسال","Send","بھیجیں","Ipadala","পাঠান","Kirim","Envoyer","Enviar"],
+moderation:["تخضع التعليقات لمراجعة آلية لضمان بيئة إيجابية","Comments are auto-moderated to keep a positive space","مثبت ماحول کے لیے تبصروں کا خودکار جائزہ","Awtomatikong sinusuri ang mga komento","ইতিবাচক পরিবেশের জন্য মন্তব্য স্বয়ংক্রিয়ভাবে যাচাই হয়","Komentar dimoderasi otomatis agar tetap positif","Commentaires modérés automatiquement","Comentarios moderados automáticamente"],
+receiver:["جهاز الاستقبال المنزلي","Home receiver","گھریلو ریسیور","Home receiver","হোম রিসিভার","Penerima rumah","Récepteur domestique","Receptor doméstico"],
+future:["ميزة مستقبلية","Future feature","آئندہ خصوصیت","Darating na feature","ভবিষ্যৎ ফিচার","Fitur mendatang","Fonction à venir","Función futura"],
+receiver_d:["ضغطة زر واحدة… ويصل صوت مسجد الحي إلى كبار السن في بيوتهم، بلا تطبيقات ولا إعدادات.","One press — and the neighbourhood mosque reaches elders at home. No apps, no settings.","ایک بٹن — اور محلے کی مسجد کی آواز گھر میں بزرگوں تک۔ نہ ایپ، نہ سیٹنگ۔","Isang pindot — at maririnig ng matatanda sa bahay ang masjid. Walang app, walang setting.","একটি চাপ — আর মহল্লার মসজিদের আওয়াজ পৌঁছে যায় ঘরের বয়স্কদের কাছে। কোনো অ্যাপ বা সেটিং নেই।","Satu tombol — suara masjid sampai ke lansia di rumah. Tanpa aplikasi, tanpa pengaturan.","Une seule touche — et la mosquée du quartier rejoint les aînés chez eux. Sans appli ni réglage.","Un solo botón — y la mezquita del barrio llega a los mayores en casa. Sin apps ni ajustes."],
+press_listen:["اضغط للاستماع","Press to listen","سننے کے لیے دبائیں","Pindutin para makinig","শুনতে চাপুন","Tekan untuk mendengar","Appuyez pour écouter","Pulsa para escuchar"],
+big_text:["خط كبير","Large text","بڑا متن","Malaking teksto","বড় লেখা","Teks besar","Grand texte","Texto grande"],
+tab_explore:["استكشف","Explore","تلاش","Tuklasin","খুঁজুন","Jelajah","Explorer","Explorar"],
+tab_mosque:["المسجد","Mosque","مسجد","Masjid","মসজিদ","Masjid","Mosquée","Mezquita"],
+tab_live:["مباشر","Live","براہِ راست","Live","লাইভ","Langsung","Direct","En vivo"],
+tab_rate:["قيّم","Rate","رائے","I-rate","মূল্যায়ন","Nilai","Évaluer","Valorar"],
+tab_recv:["المنزل","Home","گھر","Bahay","বাড়ি","Rumah","Maison","Casa"],
+app_lead:["تطبيق صُمّم لكل الأعمار: واجهة هادئة، خط كبير عند الحاجة، ووصول بلمسة واحدة. جرّب الشاشات من القائمة أو من داخل الهاتف.","Designed for every age: a calm interface, large text on demand and one-tap access. Try the screens from the list or inside the phone.","ہر عمر کے لیے: پرسکون انٹرفیس، ضرورت پر بڑا متن، اور ایک ٹچ رسائی۔ فہرست یا فون سے اسکرینیں آزمائیں۔","Para sa lahat ng edad: payapang interface, malaking teksto kung kailangan at one-tap na access.","সব বয়সের জন্য: শান্ত ইন্টারফেস, প্রয়োজনে বড় লেখা, এক ছোঁয়ায় প্রবেশ। তালিকা বা ফোন থেকে স্ক্রিনগুলো দেখুন।","Untuk segala usia: antarmuka tenang, teks besar sesuai kebutuhan, dan akses satu sentuhan.","Conçue pour tous les âges : interface apaisée, grand texte à la demande et accès en un geste.","Para todas las edades: interfaz serena, texto grande cuando se necesita y acceso con un toque."],
+f_explore:["البحث عن المساجد القريبة بالخريطة أو بالاسم أو الحي أو اسم الإمام","Find nearby mosques by map, name, district or imam","نقشے، نام، محلے یا امام کے ذریعے قریبی مساجد تلاش کریں","Hanapin ang malapit na masjid sa mapa, pangalan, distrito o imam","মানচিত্র, নাম, এলাকা বা ইমামের নামে কাছের মসজিদ খুঁজুন","Cari masjid terdekat via peta, nama, kawasan, atau imam","Trouver les mosquées par carte, nom, quartier ou imam","Encuentra mezquitas por mapa, nombre, barrio o imán"],
+f_mosque:["صفحة مستقلة لكل مسجد: المواقيت اللحظية والموقع والتقييم","A page for every mosque: live times, location and rating","ہر مسجد کا صفحہ: اوقات، مقام اور ریٹنگ","Pahina ng bawat masjid: oras, lokasyon at rating","প্রতিটি মসজিদের পাতা: সময়, অবস্থান ও রেটিং","Halaman tiap masjid: jadwal, lokasi, dan penilaian","Une page par mosquée : horaires, lieu et note","Página de cada mezquita: horarios, ubicación y valoración"],
+f_live:["قناة البث الصوتي المباشر للصلوات والخطب — تجريبية حتى الاعتماد","Live audio channel for prayers and sermons — pilot until approved","نمازوں اور خطبوں کا براہِ راست چینل — منظوری تک تجرباتی","Live audio para sa dasal at khutbah — pilot hanggang maaprubahan","নামাজ ও খুতবার সরাসরি অডিও — অনুমোদন পর্যন্ত পরীক্ষামূলক","Kanal audio langsung untuk salat dan khutbah — uji coba","Canal audio en direct des prières et sermons — pilote","Canal de audio en vivo de oraciones y sermones — piloto"],
+f_rate:["تقييم مجتمعي إيجابي يصل مباشرة إلى لوحة الإمام","Positive community ratings delivered straight to the imam","مثبت آراء جو براہِ راست امام تک پہنچیں","Positibong rating na diretso sa imam","ইতিবাচক মূল্যায়ন সরাসরি ইমামের কাছে","Penilaian positif langsung sampai ke imam","Des avis positifs transmis directement à l’imam","Valoraciones positivas que llegan directo al imán"],
+f_recv:["ربط جهاز استقبال منزلي بسيط لكبار السن بضغطة واحدة","A simple one-button home receiver for elders","بزرگوں کے لیے ایک بٹن والا سادہ ریسیور","Simpleng home receiver na isang pindot lang","বয়স্কদের জন্য এক-বোতামের সহজ রিসিভার","Penerima rumah sederhana satu tombol untuk lansia","Un récepteur simple à une touche pour les aînés","Un receptor sencillo de un botón para mayores"],
+thanks:["جزاك الله خيراً! وصلت كلمتك إلى أصداء المصلين","Thank you! Your words reached the imam’s echoes","جزاک اللہ! آپ کی بات امام تک پہنچ گئی","Salamat! Naabot ng iyong salita ang imam","জাযাকাল্লাহ! আপনার কথা ইমামের কাছে পৌঁছেছে","Terima kasih! Pesan Anda sampai ke imam","Merci ! Vos mots sont parvenus à l’imam","¡Gracias! Tus palabras llegaron al imán"],
+need_star:["اختر تقييماً بالنجوم أولاً","Pick a star rating first","پہلے ستارے منتخب کریں","Pumili muna ng bituin","প্রথমে স্টার বেছে নিন","Pilih bintang terlebih dahulu","Choisissez d’abord une note","Elige primero una valoración"],
+toast_req:["أُرسل طلب البث إلى الوزارة","Broadcast request sent to the Ministry","نشریات کی درخواست وزارت کو بھیج دی گئی","Naipadala ang hiling sa Ministri","সম্প্রচারের অনুরোধ মন্ত্রণালয়ে পাঠানো হয়েছে","Permohonan siaran dikirim ke Kementerian","Demande envoyée au Ministère","Solicitud enviada al Ministerio"],
+toast_appr:["اعتمدت الوزارة البث — أصبح متاحاً في تطبيق المستفيد","Ministry approved — now live in the beneficiary app","وزارت نے منظوری دی — اب ایپ میں دستیاب","Inaprubahan — live na sa app","মন্ত্রণালয় অনুমোদন দিয়েছে — এখন অ্যাপে লাইভ","Disetujui — kini tersedia di aplikasi","Validé — disponible dans l’application","Aprobado — ya disponible en la app"],
+toast_rej:["لم يُعتمد طلب البث","Broadcast request declined","نشریات کی درخواست مسترد","Tinanggihan ang hiling","সম্প্রচারের অনুরোধ প্রত্যাখ্যাত","Permohonan siaran ditolak","Demande refusée","Solicitud rechazada"],
+toast_csv:["تم تصدير التقرير","Report exported","رپورٹ برآمد ہو گئی","Na-export ang ulat","প্রতিবেদন রপ্তানি হয়েছে","Laporan diekspor","Rapport exporté","Informe exportado"],
+toast_stop:["تم إيقاف البث","Broadcast stopped","نشریات روک دی گئیں","Itinigil ang broadcast","সম্প্রচার বন্ধ","Siaran dihentikan","Diffusion arrêtée","Emisión detenida"],
+tip_link:["جرّب: اطلب البث من لوحة الإمام ← اعتمده من لوحة الوزارة ← استمع في التطبيق","Try it: request broadcast as imam → approve as Ministry → listen in the app","آزمائیں: امام سے درخواست ← وزارت سے منظوری ← ایپ میں سنیں","Subukan: humiling bilang imam → aprubahan sa Ministri → makinig sa app","চেষ্টা করুন: ইমাম হিসেবে অনুরোধ → মন্ত্রণালয়ে অনুমোদন → অ্যাপে শুনুন","Coba: ajukan sebagai imam → setujui di Kementerian → dengarkan di aplikasi","Essayez : demande de l’imam → validation du Ministère → écoute dans l’appli","Pruébalo: solicita como imán → aprueba como Ministerio → escucha en la app"],
+iot_title:["العتاد وإنترنت الأشياء","Hardware & IoT integration","ہارڈویئر اور IoT انضمام","Hardware at IoT","হার্ডওয়্যার ও IoT সংযুক্তি","Perangkat keras & IoT","Matériel & intégration IoT","Hardware e integración IoT"],
+iot_sub:["رحلة الإشارة من مكسر المسجد إلى الوزارة والمصلين — بأمان وخصوصية","The signal’s journey from the mosque mixer to the Ministry and worshippers — securely and privately","مسجد کے مکسر سے وزارت اور نمازیوں تک سگنل کا محفوظ سفر","Ang paglalakbay ng signal mula mixer hanggang Ministri at mga nagdarasal — ligtas at pribado","মসজিদের মিক্সার থেকে মন্ত্রণালয় ও মুসল্লিদের কাছে সংকেতের নিরাপদ যাত্রা","Perjalanan sinyal dari mixer masjid ke Kementerian dan jamaah — aman dan privat","Le parcours du signal, de la console de la mosquée au Ministère et aux fidèles — sûr et privé","El viaje de la señal, del mezclador al Ministerio y a los fieles — seguro y privado"],
+n_mixer:["مكسر المسجد","Mosque mixer","مسجد کا مکسر","Mixer ng masjid","মসজিদের মিক্সার","Mixer masjid","Console de la mosquée","Mezclador"],
+n_sensor:["حساس الصوت","Audio sensor","صوتی سینسر","Audio sensor","অডিও সেন্সর","Sensor audio","Capteur audio","Sensor de audio"],
+n_gw:["الجهاز الوسيط","Gateway","گیٹ وے","Gateway","গেটওয়ে","Gateway","Passerelle","Pasarela"],
+n_cloud:["سحابة مشفّرة","Encrypted cloud","انکرپٹڈ کلاؤڈ","Encrypted cloud","এনক্রিপ্টেড ক্লাউড","Cloud terenkripsi","Cloud chiffré","Nube cifrada"],
+n_state:["حالة فقط — بلا تسجيل","Status only — no recording","صرف حالت — کوئی ریکارڈنگ نہیں","Status lang — walang recording","শুধু অবস্থা — রেকর্ডিং নয়","Hanya status — tanpa rekaman","État seulement — aucun enregistrement","Solo estado — sin grabación"],
+n_secure:["اتصال آمن","Secure link","محفوظ رابطہ","Ligtas na koneksyon","নিরাপদ সংযোগ","Tautan aman","Liaison sécurisée","Enlace seguro"],
+n_e2e:["تشفير طرفي","End-to-end","اینڈ ٹو اینڈ","End-to-end","এন্ড-টু-এন্ড","Ujung ke ujung","De bout en bout","De extremo a extremo"],
+gw_t:["جهاز مِحراب الوسيط","Mihrab IoT gateway","محراب IoT گیٹ وے","Mihrab IoT gateway","মিহরাব IoT গেটওয়ে","Gateway IoT Mihrab","Passerelle IoT Mihrab","Pasarela IoT Mihrab"],
+gw_d:["يُركّب في غرفة التحكم ويربط المكسر بالإنترنت بشكل آمن.","Installed in the control room; links the mixer to the internet securely.","کنٹرول روم میں نصب، مکسر کو محفوظ طریقے سے انٹرنیٹ سے جوڑتا ہے۔","Nakakabit sa control room; ligtas na ikinokonekta ang mixer sa internet.","কন্ট্রোল রুমে স্থাপিত; মিক্সারকে নিরাপদে ইন্টারনেটে যুক্ত করে।","Dipasang di ruang kontrol; menghubungkan mixer ke internet dengan aman.","Installée en salle de contrôle ; relie la console à Internet en toute sécurité.","Se instala en la sala de control y conecta el mezclador a internet con seguridad."],
+sens_t:["حساسات الصوت","Audio sensors","صوتی سینسر","Audio sensor","অডিও সেন্সর","Sensor audio","Capteurs audio","Sensores de audio"],
+sens_d:["ترصد وجود إشارة صوتية متزامنة مع وقت الإقامة وترسل الحالة فقط دون حفظ أو تسجيل.","Detect an audio signal at iqama time and send status only — nothing is stored or recorded.","اقامت کے وقت صوتی سگنل کا پتہ لگا کر صرف حالت بھیجتے ہیں — کچھ محفوظ نہیں ہوتا۔","Natutukoy ang audio sa oras ng iqama at status lang ang ipinapadala — walang naitatala.","ইকামতের সময় অডিও সংকেত শনাক্ত করে শুধু অবস্থা পাঠায় — কিছুই সংরক্ষিত হয় না।","Mendeteksi sinyal suara saat iqamah dan hanya mengirim status — tidak ada yang direkam.","Détectent un signal à l’iqama et n’envoient que l’état — rien n’est enregistré.","Detectan la señal en la iqama y solo envían el estado — no se graba nada."],
+recv_t:["أجهزة الاستقبال المنزلية","Elderly home receivers","بزرگوں کے گھریلو ریسیور","Home receiver para sa matatanda","বয়স্কদের হোম রিসিভার","Penerima rumah lansia","Récepteurs pour les aînés","Receptores para mayores"],
+recv_d:["راديو رقمي مبرمج مسبقاً على قناة المسجد عبر شبكات منخفضة الطاقة أو شريحة بيانات مدمجة.","A pre-programmed digital radio tuned to the mosque over low-power networks or a built-in SIM.","کم توانائی والے نیٹ ورک یا بلٹ اِن سم کے ذریعے مسجد پر سیٹ ڈیجیٹل ریڈیو۔","Digital radio na naka-tune sa masjid gamit ang low-power network o built-in SIM.","লো-পাওয়ার নেটওয়ার্ক বা বিল্ট-ইন সিমে মসজিদের চ্যানেলে প্রোগ্রাম করা ডিজিটাল রেডিও।","Radio digital yang terprogram ke kanal masjid via jaringan hemat daya atau SIM bawaan.","Radio numérique préréglée sur la mosquée via réseau basse consommation ou SIM intégrée.","Radio digital preprogramada al canal de la mezquita por red de bajo consumo o SIM integrada."],
+cloud_t:["سحابة قابلة للتوسع","Scalable cloud","قابلِ توسیع کلاؤڈ","Scalable na cloud","স্কেলযোগ্য ক্লাউড","Cloud skalabel","Cloud évolutif","Nube escalable"],
+cloud_d:["تستوعب آلاف المساجد وملايين المستفيدين في وقت واحد، خصوصاً في الجمعة والتراويح.","Handles thousands of mosques and millions of users at once — especially Friday and Taraweeh.","ہزاروں مساجد اور لاکھوں صارفین کو بیک وقت سنبھالتا ہے — خاص طور پر جمعہ اور تراویح میں۔","Kaya ang libu-libong masjid at milyun-milyong user — lalo na tuwing Biyernes at Taraweeh.","একসাথে হাজারো মসজিদ ও লাখো ব্যবহারকারী — বিশেষত জুমা ও তারাবিতে।","Menampung ribuan masjid dan jutaan pengguna sekaligus — terutama Jumat dan Tarawih.","Des milliers de mosquées et des millions d’utilisateurs simultanés — surtout le vendredi et aux Tarawih.","Miles de mezquitas y millones de usuarios a la vez — sobre todo en viernes y Tarawih."],
+priv_t:["لا تسجيل للصوت… أبداً","No audio recording — ever","آواز کی ریکارڈنگ — کبھی نہیں","Walang pag-record ng audio — kailanman","অডিও রেকর্ডিং — কখনোই নয়","Tanpa rekaman suara — selamanya","Aucun enregistrement audio — jamais","Sin grabación de audio — nunca"],
+priv_d:["ما لم تُفعَّل خدمة البث المباشر المعتمدة، يرسل الحساس حالة (متصل/يعمل) فقط.","Unless an approved live broadcast is on, sensors send only a status (connected / working).","منظور شدہ نشریات کے بغیر سینسر صرف حالت (منسلک/فعال) بھیجتا ہے۔","Kung walang aprubadong broadcast, status lang ang ipinapadala ng sensor.","অনুমোদিত সম্প্রচার ছাড়া সেন্সর শুধু অবস্থা (সংযুক্ত/চালু) পাঠায়।","Tanpa siaran yang disetujui, sensor hanya mengirim status (terhubung/berfungsi).","Sans diffusion validée, les capteurs n’envoient qu’un état (connecté / actif).","Sin emisión aprobada, los sensores solo envían estado (conectado / activo)."],
+gov_title:["الضوابط التنظيمية والأمنية والخصوصية","Regulatory, security & privacy controls","ضابطہ، سلامتی اور رازداری کے اصول","Mga kontrol sa regulasyon, seguridad at privacy","নিয়ন্ত্রক, নিরাপত্তা ও গোপনীয়তা নীতি","Kontrol regulasi, keamanan & privasi","Contrôles réglementaires, sécurité & confidentialité","Controles normativos, de seguridad y privacidad"],
+gov_sub:["التقنية في خدمة بيوت الله — بإنصاف ومسؤولية","Technology serving the Houses of Allah — fairly and responsibly","اللہ کے گھروں کی خدمت میں ٹیکنالوجی — انصاف اور ذمہ داری کے ساتھ","Teknolohiya sa paglilingkod sa mga Bahay ni Allah — patas at responsable","আল্লাহর ঘরের সেবায় প্রযুক্তি — ন্যায় ও দায়িত্বের সাথে","Teknologi untuk Rumah Allah — adil dan bertanggung jawab","La technologie au service des Maisons d’Allah — avec équité et responsabilité","Tecnología al servicio de las Casas de Allah — con justicia y responsabilidad"],
+g1_t:["الامتثال التنظيمي","Regulatory compliance","ضابطہ جاتی تعمیل","Pagsunod sa regulasyon","নিয়ন্ত্রক সম্মতি","Kepatuhan regulasi","Conformité réglementaire","Cumplimiento normativo"],
+g1_d:["لا يُفعَّل البث الصوتي المباشر للعامة إلا بعد صدور الموافقات الرسمية من الوزارة.","Public live audio is only enabled after the Ministry issues official approval.","عوامی براہِ راست نشریات صرف وزارت کی سرکاری منظوری کے بعد۔","Pinapagana lamang ang live audio matapos ang opisyal na pag-apruba ng Ministri.","মন্ত্রণালয়ের আনুষ্ঠানিক অনুমোদনের পরেই জনসম্প্রচার চালু হয়।","Siaran langsung publik hanya aktif setelah persetujuan resmi Kementerian.","La diffusion publique n’est activée qu’après validation officielle du Ministère.","La emisión pública solo se activa tras la aprobación oficial del Ministerio."],
+g2_t:["حماية البيانات الشخصية","Personal data protection","ذاتی ڈیٹا کا تحفظ","Proteksyon ng personal na datos","ব্যক্তিগত তথ্য সুরক্ষা","Perlindungan data pribadi","Protection des données","Protección de datos"],
+g2_d:["جميع التعليقات والتقييمات تخضع لمراجعة آلية للمحتوى، ولا يُفصح عن أي بيانات حساسة للمستخدمين.","All comments and ratings are auto-moderated; no sensitive user data is ever disclosed.","تمام تبصروں کا خودکار جائزہ؛ صارفین کا حساس ڈیٹا کبھی ظاہر نہیں ہوتا۔","Awtomatikong sinusuri ang lahat ng komento; walang sensitibong datos na inilalantad.","সব মন্তব্য স্বয়ংক্রিয়ভাবে যাচাই হয়; কোনো সংবেদনশীল তথ্য প্রকাশ হয় না।","Semua komentar dimoderasi otomatis; data sensitif tidak pernah dibuka.","Tous les avis sont modérés ; aucune donnée sensible n’est divulguée.","Todos los comentarios se moderan; nunca se divulgan datos sensibles."],
+g3_t:["لا عقوبات آلية","No automated penalties","کوئی خودکار سزا نہیں","Walang awtomatikong parusa","কোনো স্বয়ংক্রিয় শাস্তি নয়","Tanpa sanksi otomatis","Aucune sanction automatique","Sin sanciones automáticas"],
+g3_d:["تنبيهات الانقطاع مؤشرات أداء تستلزم تحققاً بشرياً من وجود عذر شرعي أو عطل فني.","Outage alerts are performance indicators requiring human checks for a valid excuse or a technical fault.","انقطاع کے الرٹس کارکردگی کے اشارے ہیں جن کی انسانی تصدیق لازم ہے۔","Ang mga alerto ay indikasyon lamang na nangangailangan ng pagsusuri ng tao.","বিচ্ছিন্নতার সতর্কতা কেবল সূচক; বৈধ কারণ বা ত্রুটি যাচাইয়ে মানব পর্যালোচনা প্রয়োজন।","Peringatan gangguan adalah indikator yang memerlukan verifikasi manusia.","Les alertes sont des indicateurs nécessitant une vérification humaine.","Las alertas son indicadores que requieren verificación humana."],
+g4_t:["أمن المعلومات","Information security","معلوماتی سلامتی","Seguridad ng impormasyon","তথ্য নিরাপত্তা","Keamanan informasi","Sécurité de l’information","Seguridad de la información"],
+g4_d:["تشفير طرفي كامل بين المساجد والسحابة، ومنع اختراق البث أو حقن أصوات خارجية في شبكة المسجد.","Full end-to-end encryption between mosques and the cloud; no hijacking or injecting outside audio.","مساجد اور کلاؤڈ کے درمیان مکمل انکرپشن؛ نشریات میں مداخلت ناممکن۔","Buong end-to-end encryption; hindi mapapasok o malalagyan ng ibang tunog ang broadcast.","মসজিদ ও ক্লাউডের মধ্যে পূর্ণ এনক্রিপশন; সম্প্রচারে অনুপ্রবেশ অসম্ভব।","Enkripsi penuh antara masjid dan cloud; siaran tidak dapat dibajak.","Chiffrement complet entre mosquées et cloud ; aucune injection audio possible.","Cifrado completo entre mezquitas y nube; imposible secuestrar la emisión."],
+flow_title:["مسار معالجة التنبيه","How an alert is handled","الرٹ کیسے نمٹایا جاتا ہے","Paano hinahawakan ang alerto","সতর্কতা কীভাবে নিষ্পত্তি হয়","Alur penanganan peringatan","Traitement d’une alerte","Cómo se gestiona una alerta"],
+f1:["رصد آلي","Automated detection","خودکار نشاندہی","Awtomatikong pagtuklas","স্বয়ংক্রিয় শনাক্তকরণ","Deteksi otomatis","Détection automatique","Detección automática"],
+f2:["مؤشر أداء","Performance indicator","کارکردگی اشارہ","Indikasyon","কর্মক্ষমতা সূচক","Indikator kinerja","Indicateur","Indicador"],
+f3:["مراجعة بشرية","Human review","انسانی جائزہ","Pagsusuri ng tao","মানব পর্যালোচনা","Tinjauan manusia","Revue humaine","Revisión humana"],
+f4:["تحقق: عطل أو عذر","Verify: fault or excuse","تصدیق: خرابی یا عذر","Beripikahin: sira o dahilan","যাচাই: ত্রুটি বা কারণ","Verifikasi: gangguan atau uzur","Vérifier : panne ou excuse","Verificar: avería o excusa"],
+f5:["معالجة ومتابعة","Resolve & follow up","حل اور پیروی","Lutasin at subaybayan","সমাধান ও অনুসরণ","Selesaikan & pantau","Résoudre & suivre","Resolver y seguir"],
+never:["النظام لا يُصدر أي عقوبة أو قرار بناءً على الرصد الآلي وحده.","The system never issues a penalty or decision based on automated detection alone.","نظام صرف خودکار نشاندہی کی بنیاد پر کوئی سزا یا فیصلہ نہیں کرتا۔","Hindi kailanman nagpapataw ang sistema ng parusa batay lamang sa awtomatikong pagtuklas.","শুধু স্বয়ংক্রিয় শনাক্তকরণের ভিত্তিতে সিস্টেম কোনো শাস্তি বা সিদ্ধান্ত দেয় না।","Sistem tidak pernah menjatuhkan sanksi berdasarkan deteksi otomatis semata.","Le système ne prend jamais de sanction sur la seule base d’une détection automatique.","El sistema nunca sanciona basándose solo en la detección automática."],
+demoNote:["البيانات المعروضة توضيحية لأغراض العرض","Figures shown are illustrative demo data","دکھایا گیا ڈیٹا نمائشی ہے","Ang datos ay para sa demo lamang","প্রদর্শিত তথ্য ডেমো উদ্দেশ্যে","Data yang ditampilkan bersifat ilustratif","Données illustratives de démonstration","Datos ilustrativos de demostración"],
+credit:["تم تطوير هذه المنصة بواسطة سليمان الخطيب","This platform has been developed by Sulaiman Alkhateeb","یہ پلیٹ فارم سلیمان الخطیب نے تیار کیا ہے","Ang platapormang ito ay binuo ni Sulaiman Alkhateeb","এই প্ল্যাটফর্মটি তৈরি করেছেন সুলাইমান আলখতিব","Platform ini dikembangkan oleh Sulaiman Alkhateeb","Cette plateforme a été développée par Sulaiman Alkhateeb","Esta plataforma ha sido desarrollada por Sulaiman Alkhateeb"],
+today:["اليوم","Today","آج","Ngayon","আজ","Hari ini","Aujourd’hui","Hoy"]
+};
+const S={lang:"ar",view:"home",bc:"off",bcAt:null,regionF:"all",statusF:{ok:1,warn:1,fault:1},sel:null,appTab:"explore",appM:0,big:false,q:"",rt:{r:0,c:0,s:0},playing:false,recvOn:false,repRegion:"all",repPeriod:"month",repStatus:"all",feat:"explore"};
+function t(k){const a=D[k];if(!a)return k;return a[LI[S.lang]]||a[1]}
+const ar=()=>S.lang==="ar"||S.lang==="ur";
+const nm=o=>ar()?o.ar:o.en;
+const fmt=n=>Number(n).toLocaleString("en-US");
+const ic=(id,cls="")=>`<svg class="ic ${cls}"><use href="#i-${id}"/></svg>`;
+
+/* ===================== LOGO ===================== */
+let lgN=0;
+const LOGO_FULL=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -1340 3830 1700" role="img" aria-label="المحراب MIHRAB"><defs><linearGradient id="__P__" x1="0" y1="-1300" x2="0" y2="300" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F8EBC6"/><stop offset=".45" stop-color="#E2C37E"/><stop offset="1" stop-color="#A9843F"/></linearGradient></defs><path d="M886 -300 V-540 C886 -800 1054.7 -925 1127 -985 C1199.3 -925 1368 -800 1368 -540 V-300" fill="none" stroke="#5FD0C2" stroke-width="18" stroke-linecap="round" opacity=".75"/><g fill="url(#__P__)"><path d="M672 -300 V-520 C672 -850 981.4 -1100 1127 -1290 C1272.6 -1100 1582 -850 1582 -520 V-300H1438 V-520 C1438 -820 1220.3 -945 1127 -1115 C1033.7 -945 816 -820 816 -520 V-300 Z" fill-rule="evenodd"/><path transform="translate(0 0) scale(1 -1)" d="M271 0Q184 0 134 59Q90 110 90 191V283L235 360V199Q235 166 247.5 153.0Q260 140 292 140H615Q647 140 659.5 153.0Q672 166 672 199V373L817 450V191Q817 98 759 46Q708 0 628 0ZM445 -235Q411 -235 390.5 -214.5Q370 -194 370 -160Q370 -126 390.5 -106.0Q411 -86 445 -86Q478 -86 498.0 -106.0Q518 -126 518 -160Q518 -194 498.0 -214.5Q478 -235 445 -235Z"/><path transform="translate(965 0) scale(1 -1)" d="M90 0V568L235 645V0Z"/><path transform="translate(1297 0) scale(1 -1)" d="M344 140H442V0H330Q307 0 282 5Q259 -126 153 -175Q111 -195 62 -195Q-4 -195 -67 -160V-34Q-15 -63 34 -63Q59 -63 80 -55Q141 -34 141 57V373L286 450V449L287 450V181Q292 140 344 140Z"/><path transform="translate(1712 0) scale(1 -1)" d="M622 140H712V0H621Q544 0 496.5 17.0Q449 34 409 76Q282 0 123 0H-27V140H124Q287 140 385 232Q322 334 237 334Q160 334 59 247V373Q144 468 252 468H254Q334 468 409.0 410.5Q484 353 542 247V194Q525 173 509 155Q544 140 622 140Z"/><path transform="translate(2398 0) scale(1 -1)" d="M601 140H699V0H588Q520 0 475 32Q423 -20 336 -20Q250 -20 198 31Q151 0 85 0H-27V140H71Q103 140 116.0 153.0Q129 166 129 198V226Q129 345 191 410Q246 468 336 468Q439 468 495 393Q543 329 544 226V198Q544 165 556.5 152.5Q569 140 601 140ZM336 120Q399 120 399 229Q399 332 336 332Q274 332 274 229Q274 120 336 120Z"/><path transform="translate(3071 0) scale(1 -1)" d="M-27 0V140H38Q80 140 96.5 157.5Q113 175 113 219V568L258 645V218Q258 116 196 56Q139 0 45 0Z"/><path transform="translate(3419 0) scale(1 -1)" d="M90 0V568L235 645V0Z"/><polygon points="1127.0,-858.0 1143.8,-810.7 1189.2,-832.2 1167.7,-786.8 1215.0,-770.0 1167.7,-753.2 1189.2,-707.8 1143.8,-729.3 1127.0,-682.0 1110.2,-729.3 1064.8,-707.8 1086.3,-753.2 1039.0,-770.0 1086.3,-786.8 1064.8,-832.2 1110.2,-810.7"/></g><g class="hk" fill="#5FD0C2"><path transform="translate(284 112) scale(1 -1)" d="M0 565 45 661 157 682Q144 707 144 736Q144 783 173.5 816.0Q203 849 245 849Q289 849 318.0 817.0Q347 785 347 736Q347 688 318.5 652.0Q290 616 247 610ZM248 713Q266 725 266 744Q266 768 247 768Q228 768 228 744Q228 724 248 713Z"/><path transform="translate(1640 10) scale(1 -1)" d="M0 565 53 678 341 730 288 618Z"/><path transform="translate(2060 5) scale(1 -1)" d="M97 774Q139 764 166.0 730.0Q193 696 193 653Q193 613 167.0 588.5Q141 564 97 564Q53 564 26.5 588.0Q0 612 0 652Q0 695 27.0 729.5Q54 764 97 774ZM97 693Q76 682 76 662Q76 638 96 638Q116 638 116 662Q116 682 97 693Z"/><path transform="translate(2561 21) scale(1 -1)" d="M0 -249 53 -136 341 -84 288 -196Z"/><path transform="translate(3118 -132) scale(1 -1)" d="M97 774Q139 764 166.0 730.0Q193 696 193 653Q193 613 167.0 588.5Q141 564 97 564Q53 564 26.5 588.0Q0 612 0 652Q0 695 27.0 729.5Q54 764 97 774ZM97 693Q76 682 76 662Q76 638 96 638Q116 638 116 662Q116 682 97 693Z"/></g></svg>`;
+const LOGO_ICON=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="632 -1340 990 1400" role="img" aria-label="MIHRAB"><defs><linearGradient id="__P__" x1="0" y1="-1300" x2="0" y2="300" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F8EBC6"/><stop offset=".45" stop-color="#E2C37E"/><stop offset="1" stop-color="#A9843F"/></linearGradient></defs><path d="M886 -300 V-540 C886 -800 1054.7 -925 1127 -985 C1199.3 -925 1368 -800 1368 -540 V-300" fill="none" stroke="#5FD0C2" stroke-width="22" stroke-linecap="round" opacity=".8"/><g fill="url(#__P__)"><path d="M672 0 V-520 C672 -850 981.4 -1100 1127 -1290 C1272.6 -1100 1582 -850 1582 -520 V0H1438 V-520 C1438 -820 1220.3 -945 1127 -1115 C1033.7 -945 816 -820 816 -520 V0 Z" fill-rule="evenodd"/><path transform="translate(965 0) scale(1 -1)" d="M90 0V568L235 645V0Z"/><polygon points="1127.0,-858.0 1143.8,-810.7 1189.2,-832.2 1167.7,-786.8 1215.0,-770.0 1167.7,-753.2 1189.2,-707.8 1143.8,-729.3 1127.0,-682.0 1110.2,-729.3 1064.8,-707.8 1086.3,-753.2 1039.0,-770.0 1086.3,-786.8 1064.8,-832.2 1110.2,-810.7"/></g></svg>`;
+function logo(){return LOGO_ICON.split("__P__").join("lgi"+(++lgN))}
+function logoFull(){return LOGO_FULL.split("__P__").join("lgf"+(++lgN))}
+
+/* ===================== PATTERN ===================== */
+(function(){const s=`<svg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'><g fill='none' stroke='#C9A45C' stroke-opacity='.22' stroke-width='1'><rect x='26' y='26' width='36' height='36'/><rect x='26' y='26' width='36' height='36' transform='rotate(45 44 44)'/><circle cx='44' cy='44' r='9'/><path d='M0 0L26 26M88 0L62 26M0 88L26 62M88 88L62 62'/></g></svg>`;document.documentElement.style.setProperty("--pattern",`url("data:image/svg+xml;utf8,${encodeURIComponent(s)}")`)})();
+
+/* ===================== DATA ===================== */
+let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646};
+const REG=[
+ {k:"riy",ar:"الرياض",en:"Riyadh",c:[46.72,24.69],n:2950,f:.03},
+ {k:"mak",ar:"مكة المكرمة",en:"Makkah",c:[39.83,21.42],n:2700,f:.025},
+ {k:"mad",ar:"المدينة المنورة",en:"Madinah",c:[39.61,24.47],n:980,f:.02},
+ {k:"est",ar:"الشرقية",en:"Eastern Province",c:[50.1,26.43],n:1650,f:.04},
+ {k:"qas",ar:"القصيم",en:"Al-Qassim",c:[43.97,26.33],n:820,f:.035},
+ {k:"asr",ar:"عسير",en:"Asir",c:[42.51,18.22],n:1100,f:.06},
+ {k:"tab",ar:"تبوك",en:"Tabuk",c:[36.57,28.38],n:420,f:.05},
+ {k:"hai",ar:"حائل",en:"Hail",c:[41.69,27.52],n:460,f:.045},
+ {k:"nor",ar:"الحدود الشمالية",en:"Northern Borders",c:[41.04,30.98],n:230,f:.08},
+ {k:"jaz",ar:"جازان",en:"Jazan",c:[42.55,16.89],n:690,f:.07},
+ {k:"naj",ar:"نجران",en:"Najran",c:[44.13,17.49],n:330,f:.065},
+ {k:"bah",ar:"الباحة",en:"Al-Baha",c:[41.47,20.01],n:440,f:.05},
+ {k:"jou",ar:"الجوف",en:"Al-Jouf",c:[40.21,29.95],n:290,f:.06}];
+const TOTAL=REG.reduce((a,r)=>a+r.n,0);
+const KSA=[[34.95,29.36],[36.07,29.19],[36.75,29.87],[37.5,30.0],[37.67,30.34],[38.0,30.5],[37.0,31.5],[39.2,32.16],[40.4,31.95],[41.44,31.37],[42.95,30.33],[44.72,29.18],[46.57,29.1],[47.46,29.0],[48.42,28.55],[48.8,27.69],[49.3,27.46],[49.47,27.11],[50.15,26.69],[50.21,26.28],[50.11,25.94],[50.24,25.61],[50.53,25.33],[50.66,24.99],[50.81,24.75],[51.11,24.56],[51.39,24.63],[51.58,24.25],[51.62,24.01],[52.0,23.0],[55.0,22.5],[55.21,22.71],[55.67,22.0],[55.0,20.0],[52.0,19.0],[49.12,18.62],[48.18,18.17],[47.47,17.12],[47.0,16.95],[46.75,17.28],[46.37,17.23],[45.4,17.33],[45.22,17.43],[44.06,17.41],[43.79,17.32],[43.38,17.58],[43.12,17.09],[43.22,16.67],[42.78,16.35],[42.65,16.77],[42.35,17.08],[42.27,17.47],[41.75,17.83],[41.22,18.67],[40.94,19.49],[40.25,20.17],[39.8,20.34],[39.14,21.29],[39.02,21.99],[39.07,22.58],[38.49,23.69],[38.02,24.08],[37.48,24.29],[37.15,24.86],[37.21,25.08],[36.93,25.6],[36.64,25.83],[36.25,26.57],[35.64,27.38],[35.13,28.06],[34.63,28.06],[34.79,28.61],[34.83,28.96],[34.95,29.36]];
+const PX=lon=>(lon-34.2)*27.8+10,PY=lat=>(32.5-lat)*30.4+6;
+function inPoly(x,y,p){let c=false;for(let i=0,j=p.length-1;i<p.length;j=i++){const[xi,yi]=p[i],[xj,yj]=p[j];if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c}return c}
+const MN=[["جامع النور","An-Nur Mosque"],["مسجد التقوى","At-Taqwa Mosque"],["مسجد الرحمة","Ar-Rahmah Mosque"],["جامع الهدى","Al-Huda Mosque"],["مسجد الفرقان","Al-Furqan Mosque"],["مسجد السلام","As-Salam Mosque"],["مسجد البر","Al-Birr Mosque"],["مسجد الإحسان","Al-Ihsan Mosque"],["جامع الصديق","As-Siddiq Mosque"],["جامع الفاروق","Al-Faruq Mosque"],["مسجد الإيمان","Al-Iman Mosque"],["مسجد الرضوان","Ar-Ridwan Mosque"],["جامع الخير","Al-Khair Mosque"],["مسجد اليقين","Al-Yaqin Mosque"],["مسجد الأنصار","Al-Ansar Mosque"],["جامع المهاجرين","Al-Muhajirin Mosque"]];
+const MOS=[];
+REG.forEach(r=>{const cnt=Math.max(6,Math.round(r.n/42));const spread=r.k==="est"?2.2:r.k==="riy"?1.6:1.2;for(let i=0;i<cnt;i++){let lon,lat,g=0;do{const a=rnd()*6.283,d=Math.pow(rnd(),.7)*spread;lon=r.c[0]+Math.cos(a)*d*1.1;lat=r.c[1]+Math.sin(a)*d*.85;g++}while(!inPoly(lon,lat,KSA)&&g<40);if(!inPoly(lon,lat,KSA)){lon=r.c[0];lat=r.c[1]}const x=rnd();const st=x<r.f?"fault":x<r.f+.05?"warn":"ok";const n=MN[Math.floor(rnd()*MN.length)];MOS.push({id:MOS.length+1,r,lon,lat,st,ar:n[0],en:n[1],rd:st==="ok"?97.5+rnd()*2.5:st==="warn"?84+rnd()*8:55+rnd()*20,ls:st==="fault"?Math.floor(20+rnd()*90):Math.floor(rnd()*4)})}});
+const fake=MOS.filter(m=>m.st!=="ok");
+const ATYPES={fault:["a_offline","a_noaudio","a_power"],warn:["a_mic","a_noaudio","a_power"]};
+let ALERTS=REG.map(r=>fake.find(m=>m.r===r)).filter(Boolean).slice(0,10).map((m,i)=>({id:i,m,type:ATYPES[m.st][i%3],time:`${String(5+Math.floor(i*1.4)).padStart(2,"0")}:${String((i*17+4)%60).padStart(2,"0")}`,st:i%4===2?"assigned":"pending"}));
+ALERTS.sort((a,b)=>b.time.localeCompare(a.time));
+const REQS=[{id:"x1",m:MOS[30],at:"09:12"},{id:"x2",m:MOS[120],at:"10:47"}];
+const IM={ar:"جامع الهداية",en:"Al-Hidayah Grand Mosque",dar:"حي الملقا، الرياض",den:"Al-Malqa, Riyadh",iar:"الشيخ عبدالرحمن السالم",ien:"Sheikh Abdulrahman Al-Salem",mar:"عبدالله الحربي",men:"Abdullah Al-Harbi"};
+const APPM=[
+ {ar:IM.ar,en:IM.en,dar:"الملقا",den:"Al-Malqa",iar:IM.iar,ien:IM.ien,km:0.4,rt:4.9,cnt:1240,home:1,x:52,y:46},
+ {ar:"مسجد التقوى",en:"At-Taqwa Mosque",dar:"الياسمين",den:"Al-Yasmin",iar:"الشيخ فهد العتيبي",ien:"Sheikh Fahad Al-Otaibi",km:0.9,rt:4.8,cnt:860,x:28,y:30},
+ {ar:"جامع النور",en:"An-Nur Mosque",dar:"النرجس",den:"An-Narjis",iar:"الشيخ ماجد الشهري",ien:"Sheikh Majed Al-Shehri",km:1.6,rt:4.7,cnt:640,x:76,y:24},
+ {ar:"مسجد الرحمة",en:"Ar-Rahmah Mosque",dar:"الصحافة",den:"As-Sahafa",iar:"الشيخ سعد القحطاني",ien:"Sheikh Saad Al-Qahtani",km:2.3,rt:4.8,cnt:520,x:20,y:74},
+ {ar:"مسجد الفرقان",en:"Al-Furqan Mosque",dar:"العارض",den:"Al-Arid",iar:"الشيخ خالد الدوسري",ien:"Sheikh Khalid Al-Dosari",km:3.1,rt:4.6,cnt:410,x:82,y:70}];
+const PT=[["fajr","04:38"],["dhuhr","11:41"],["asr","15:04"],["maghrib","17:27"],["isha","18:57"]];
+let FB=[
+ {lang:"ar",txt:"تلاوة خاشعة تأخذ القلب، جزى الله الإمام خيراً وبارك في صوته.",n:"أبو عبدالله",s:5,d:"2"},
+ {lang:"ur",txt:"امام صاحب کی تلاوت بہت پرسکون ہے، اللہ قبول فرمائے۔",n:"محمد عارف",s:5,d:"3"},
+ {lang:"bn",txt:"ইমাম সাহেবের তিলাওয়াত খুবই সুন্দর, মসজিদও পরিচ্ছন্ন।",n:"আব্দুল করিম",s:5,d:"4"},
+ {lang:"id",txt:"Bacaan imamnya sangat menyentuh, masjidnya bersih dan sejuk.",n:"Ahmad Fauzi",s:5,d:"5"},
+ {lang:"en",txt:"Crystal-clear sound even in the back rows. Beautiful recitation.",n:"Yusuf K.",s:5,d:"6"},
+ {lang:"fil",txt:"Napakaganda ng pagbigkas ng imam, malinis at maayos ang masjid.",n:"Abdullah R.",s:4,d:"8"},
+ {lang:"fr",txt:"Une récitation apaisante et un son parfaitement clair.",n:"Karim B.",s:5,d:"9"}];
+
+/* ===================== HELPERS ===================== */
+function toast(msg,icon="check"){const w=document.getElementById("toasts");const d=document.createElement("div");d.className="toast";d.innerHTML=ic(icon)+`<span>${msg}</span>`;w.appendChild(d);setTimeout(()=>{d.style.transition=".4s";d.style.opacity="0";d.style.transform="translateY(10px)";setTimeout(()=>d.remove(),400)},3600)}
+function stBadge(s){return {ok:`<span class="badge b-ok">${t("s_ok")}</span>`,warn:`<span class="badge b-warn">${t("s_warn")}</span>`,fault:`<span class="badge b-fault">${t("s_fault")}</span>`}[s]}
+function aBadge(s){const m={pending:["b-warn","st_pending"],assigned:["b-info","st_assigned"],techfault:["b-fault","st_techfault"],excused:["b-gray","st_excused"],resolved:["b-ok","st_resolved"]}[s];return `<span class="badge ${m[0]}">${t(m[1])}</span>`}
+const regs=()=>S.regionF==="all"?REG:REG.filter(r=>r.k===S.regionF);
+function stats(){const rs=regs();const n=rs.reduce((a,r)=>a+r.n,0);const ms=MOS.filter(m=>rs.includes(m.r));const avgRd=ms.reduce((a,m)=>a+m.rd,0)/ms.length;const fl=ms.filter(m=>m.st==="fault").length/ms.length;const pend=ALERTS.filter(a=>(a.st==="pending"||a.st==="assigned")&&rs.includes(a.m.r)).length;return {n,ready:avgRd.toFixed(1),audio:Math.round(n*(1-fl)*.975),faults:Math.round(n*fl),review:pend*4+(S.regionF==="all"?21:1)}}
+function nextPrayer(){const now=new Date();const m=now.getHours()*60+now.getMinutes()+now.getSeconds()/60;for(let i=0;i<PT.length;i++){const[h,mm]=PT[i][1].split(":").map(Number);if(h*60+mm>m)return{i,diff:(h*60+mm-m)*60}}const[h,mm]=PT[0][1].split(":").map(Number);return{i:0,diff:(24*60-m+h*60+mm)*60}}
+const hms=s=>{s=Math.max(0,Math.floor(s));return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(v=>String(v).padStart(2,"0")).join(":")};
+
+/* ===================== VIEWS ===================== */
+const NAV=[["home","home"],["ministry","gov"],["imam","mosque"],["app","phone"],["iot","cpu"],["gov","shield"]];
+function renderTabs(){document.getElementById("tabs").innerHTML=NAV.map(([k,i])=>`<button class="tab ${S.view===k?"on":""}" data-act="nav" data-v="${k}">${ic(i)}${t("nav_"+k)}</button>`).join("")}
+const V={};
+
+V.home=()=>{const s=stats();const wins=NAV.slice(1).map(([k,i],n)=>`<div class="card win" data-act="nav" data-v="${k}"><div class="top"><span class="num">0${n+1}</span><span class="big">${ic(i)}</span></div><div class="body"><h4>${t("nav_"+k)}</h4><p>${t("w_"+k)}</p><span class="go">${t("open")} ${ic("next","flip")}</span></div></div>`).join("");
+return `<div class="view"><section class="hero"><div><span class="eyebrow">${ic("star")} ${t("heroEyebrow")}</span><h1>${t("heroTitle")}</h1><p>${t("heroSub")}</p><div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn gold" data-act="nav" data-v="ministry">${ic("gov")} ${t("nav_ministry")}</button><button class="btn soft" style="background:rgba(255,255,255,.1);color:#fff" data-act="replay">${ic("film")} ${t("replay")}</button></div></div><div class="hero-stats"><div class="hs"><b data-count="${TOTAL}">0</b><span>${t("st_mosques")}</span></div><div class="hs"><b data-count="${s.ready}" data-suf="%">0</b><span>${t("st_ready")}</span></div><div class="hs"><b data-count="${s.audio}">0</b><span>${t("st_audio")}</span></div><div class="hs"><b data-count="1846200">0</b><span>${t("st_users")}</span></div></div><div class="hero-logo">${logo()}</div></section>
+<h2 class="section-t">${t("windows")}</h2><div class="grid windows">${wins}</div>
+<h2 class="section-t">${t("eco_title")}</h2><div class="card eco">${ecoSVG()}<div class="eco-list"><div class="eco-item"><span class="n">${ic("gov")}</span><div><b>${t("eco_m")}</b><span>${t("eco_m_d")}</span></div></div><div class="eco-item"><span class="n">${ic("mosque")}</span><div><b>${t("eco_q")}</b><span>${t("eco_q_d")}</span></div></div><div class="eco-item"><span class="n">${ic("users")}</span><div><b>${t("eco_c")}</b><span>${t("eco_c_d")}</span></div></div><div class="note">${ic("act")}<span>${t("tip_link")}</span></div></div></div></div>`};
+function ecoSVG(){const node=(x,y,lbl,icon)=>`<g transform="translate(${x} ${y})"><circle r="46" fill="#073528"/><circle r="46" fill="none" stroke="#C9A45C" stroke-width="2"/><circle r="56" fill="none" stroke="#C9A45C" stroke-opacity=".25" stroke-dasharray="3 6"/><svg x="-14" y="-26" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8CF94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-${icon}"/></svg><text y="22" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">${lbl}</text></g>`;const lab=(x,y,s)=>`<g transform="translate(${x} ${y})"><rect x="-62" y="-13" width="124" height="26" rx="13" fill="#fff" stroke="#E5E1D6"/><text text-anchor="middle" y="5" font-size="11.5" fill="#0B4A37" font-weight="600">${s}</text></g>`;
+return `<svg viewBox="0 0 420 360" style="width:100%;max-width:460px;margin:auto;display:block"><path class="flowdash" d="M210 70 L90 270" stroke="#1FA79A" stroke-width="2.5" fill="none"/><path class="flowdash" d="M90 270 L330 270" stroke="#1FA79A" stroke-width="2.5" fill="none"/><path class="flowdash" d="M330 270 L210 70" stroke="#C9A45C" stroke-width="2.5" fill="none"/><g transform="translate(210 205)">${logo().replace('<svg','<svg x="-20" y="-28" width="40" height="56"')}</g>${lab(122,160,t("eco_l1"))}${lab(210,300,t("eco_l2"))}${lab(298,160,t("eco_l3"))}${node(210,70,t("eco_m"),"gov")}${node(90,270,t("eco_q"),"mosque")}${node(330,270,t("eco_c"),"users")}</svg>`}
+
+V.ministry=()=>{const s=stats();const k=(cls,i,l,v,d,neg)=>`<div class="card kpi ${cls}"><div class="lbl"><span class="ico">${ic(i)}</span>${l}</div><div class="val">${v}</div><div class="delta ${neg?"neg":""}">${d}</div></div>`;
+const regOpts=`<option value="all">${t("all_regions")}</option>`+REG.map(r=>`<option value="${r.k}" ${S.regionF===r.k?"selected":""}>${nm(r)}</option>`).join("");
+return `<div class="view"><div class="ph"><div><h1>${ic("gov")}${t("nav_ministry")}</h1><p>${t("w_ministry")}</p></div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="live-chip"><span class="dotlive"></span>${t("live")}</span><select class="fsel" data-act="region">${regOpts}</select></div></div>
+<div class="grid kpis">${k("","mosque",t("st_mosques"),fmt(s.n),"▲ 2.4%")}${k("","act",t("st_ready"),s.ready+"<small>%</small>","▲ 0.6%")}${k("","vol",t("st_audio"),fmt(s.audio),"▲ 1.1%")}${k("k-fault","alert",t("st_faults"),fmt(s.faults),"▼ 8.3%")}${k("k-review","eye",t("st_review"),fmt(s.review),"—")}</div>
+<div class="grid mgrid" style="margin-top:18px"><div class="card"><h3>${ic("map")}${t("map_title")}<span class="sp chips">${["ok","warn","fault"].map(x=>`<button class="chip ${S.statusF[x]?"":"off"}" data-act="sf" data-s="${x}"><span class="sw" style="background:var(--${x})"></span>${t("s_"+x)}</button>`).join("")}</span></h3><div class="mapwrap" id="mapwrap">${mapSVG()}<div class="maptip" id="maptip"></div>${S.sel?mpanel(S.sel):""}</div><div class="legend" style="margin-top:10px">${t("map_sample")} · ${MOS.length}</div></div>
+<div class="grid" style="align-content:start"><div class="card"><h3>${ic("radio")}${t("bc_requests")}</h3><div id="reqs">${reqsHTML()}</div></div><div class="card"><h3>${ic("chart")}${t("analytics_title")}</h3>${donut()}</div></div></div>
+<div class="card" style="margin-top:18px"><h3>${ic("bell")}${t("alerts_title")}</h3><div class="note" style="margin-bottom:14px">${ic("shield")}<span>${t("review_note")}</span></div><div class="scroll-x"><table class="tbl"><thead><tr><th>${t("col_time")}</th><th>${t("col_mosque")}</th><th>${t("region")}</th><th>${t("col_alert")}</th><th>${t("status")}</th><th>${t("col_action")}</th></tr></thead><tbody>${ALERTS.filter(a=>S.regionF==="all"||a.m.r.k===S.regionF).map(a=>`<tr><td class="num">${a.time}</td><td><b>${nm(a.m)}</b></td><td>${nm(a.m.r)}</td><td>${t(a.type)}</td><td>${aBadge(a.st)}</td><td style="white-space:nowrap">${a.st==="pending"?`<button class="btn sm soft" data-act="al" data-id="${a.id}" data-s="assigned">${t("act_assign")}</button>`:a.st==="assigned"?`<button class="btn sm red" data-act="al" data-id="${a.id}" data-s="techfault">${t("act_fault")}</button> <button class="btn sm soft" data-act="al" data-id="${a.id}" data-s="excused">${t("act_excuse")}</button>`:a.st==="techfault"?`<button class="btn sm" data-act="al" data-id="${a.id}" data-s="resolved">${t("act_resolve")}</button>`:`<span style="color:var(--ok)">${ic("check")}</span>`}</td></tr>`).join("")||`<tr><td colspan="6" class="empty">${t("no_results")}</td></tr>`}</tbody></table></div></div>
+<div class="grid two" style="margin-top:18px"><div class="card"><h3>${ic("act")}${t("trend_title")}</h3>${trend()}</div><div class="card"><h3>${ic("chart")}${t("region_title")}</h3><div class="hbars">${REG.map(r=>{const ms=MOS.filter(m=>m.r===r);const v=(ms.reduce((a,m)=>a+m.rd,0)/ms.length).toFixed(1);return {r,v}}).sort((a,b)=>b.v-a.v).map(o=>`<div class="hbar"><span>${nm(o.r)}</span><span class="tr"><i data-w="${o.v}"></i></span><b>${o.v}%</b></div>`).join("")}</div></div></div>
+<div class="card" style="margin-top:18px"><h3>${ic("file")}${t("reports_title")}</h3><p style="color:var(--muted);font-size:14px;margin:-6px 0 14px">${t("reports_d")}</p><div class="repf no-print"><select class="fsel" data-act="rep" data-k="repRegion"><option value="all">${t("all_regions")}</option>${REG.map(r=>`<option value="${r.k}" ${S.repRegion===r.k?"selected":""}>${nm(r)}</option>`).join("")}</select><select class="fsel" data-act="rep" data-k="repPeriod">${["p_week","p_month","p_q"].map(p=>`<option value="${p}" ${S.repPeriod===p?"selected":""}>${t(p)}</option>`).join("")}</select><select class="fsel" data-act="rep" data-k="repStatus"><option value="all">${t("all")}</option>${["ok","warn","fault"].map(x=>`<option value="${x}" ${S.repStatus===x?"selected":""}>${t("s_"+x)}</option>`).join("")}</select><button class="btn no-art" data-act="csv">${ic("dl")}${t("export_csv")}</button><button class="btn soft no-art" data-act="print">${ic("print")}${t("print_rep")}</button></div></div></div>`};
+function mapSVG(){const pts=KSA.map(([a,b])=>`${PX(a).toFixed(1)},${PY(b).toFixed(1)}`).join(" ");let g="";for(let lo=36;lo<=55;lo+=3)g+=`<line class="grat" x1="${PX(lo)}" y1="0" x2="${PX(lo)}" y2="500"/>`;for(let la=17;la<=32;la+=3)g+=`<line class="grat" x1="0" y1="${PY(la)}" x2="600" y2="${PY(la)}"/>`;
+const dots=MOS.filter(m=>S.statusF[m.st]&&(S.regionF==="all"||m.r.k===S.regionF)).map(m=>{const x=PX(m.lon).toFixed(1),y=PY(m.lat).toFixed(1);const col=`var(--${m.st})`;return (m.st==="fault"?`<circle class="pulse" cx="${x}" cy="${y}" r="4" fill="${col}" opacity=".5"/>`:"")+`<circle class="mdot" data-act="mdot" data-id="${m.id}" cx="${x}" cy="${y}" r="${m.st==="ok"?3.4:4.2}" fill="${col}" stroke="#fff" stroke-width="1"/>`}).join("");
+const labels=REG.map(r=>`<text class="city-l" x="${PX(r.c[0])+7}" y="${PY(r.c[1])-7}">${nm(r)}</text>`).join("");
+return `<svg viewBox="0 0 620 500">${g}<polygon class="land" points="${pts}"/>${S.regionF!=="all"?(()=>{const r=REG.find(x=>x.k===S.regionF);return `<circle cx="${PX(r.c[0])}" cy="${PY(r.c[1])}" r="60" fill="#1FA79A" opacity=".08"/>`})():""}${dots}${labels}</svg>`}
+function mpanel(id){const m=MOS.find(x=>x.id===id);if(!m)return "";return `<div class="mpanel"><button class="x" data-act="mclose">${ic("x")}</button><h5>${nm(m)}</h5><div style="color:var(--muted);font-size:12px;margin-bottom:8px">${nm(m.r)} · #${String(m.id).padStart(5,"0")}</div><div class="row"><span>${t("status")}</span>${stBadge(m.st)}</div><div class="row"><span>${t("readiness")}</span><b style="font-family:Outfit">${m.rd.toFixed(1)}%</b></div><div class="row"><span>${t("last_signal")}</span><b style="font-family:Outfit">${m.ls} min</b></div><div class="row"><span>${t("d_gw")}</span>${m.st==="fault"?`<span class="badge b-fault">${t("s_fault")}</span>`:`<span class="badge b-ok">${t("online")}</span>`}</div></div>`}
+function reqsHTML(){const list=[...REQS];if(S.bc==="pending")list.unshift({id:"imam",m:{ar:IM.ar,en:IM.en,r:REG[0]},at:S.bcAt,mine:1});if(!list.length)return `<div class="empty">${t("no_requests")}</div>`;return list.map(q=>`<div class="req ${q.mine?"mine":""}"><span class="ri">${ic("radio")}</span><div><b>${nm(q.m)}</b><small>${nm(q.m.r)} · ${t("requested_at")} <bdi>${q.at}</bdi></small></div><div class="acts"><button class="btn sm" data-act="rq" data-id="${q.id}" data-ok="1">${t("approve")}</button><button class="btn sm red" data-act="rq" data-id="${q.id}" data-ok="0">${t("reject")}</button></div></div>`).join("")}
+function donut(){const data=[["cat_audio",46,"#1FA79A"],["cat_net",34,"#C9A45C"],["cat_ops",20,"#0B4A37"]];let off=0;const C=2*Math.PI*40;const arcs=data.map(([k,v,c])=>{const s=`<circle r="40" cx="60" cy="60" fill="none" stroke="${c}" stroke-width="18" stroke-dasharray="${C*v/100-2} ${C}" stroke-dashoffset="${-C*off/100}" transform="rotate(-90 60 60)"/>`;off+=v;return s}).join("");return `<div class="donut-wrap"><svg viewBox="0 0 120 120">${arcs}<text x="60" y="58" text-anchor="middle" font-family="Outfit" font-size="18" font-weight="600" fill="#10221C">${fmt(stats().faults)}</text><text x="60" y="74" text-anchor="middle" font-size="9" fill="#5F7069">${t("st_faults")}</text></svg><div class="dleg">${data.map(([k,v,c])=>`<div><i style="background:${c}"></i>${t(k)}<b>${v}%</b></div>`).join("")}</div></div>`}
+function trend(){const fv=Number(stats().ready);const v=[];for(let i=0;i<30;i++){v.push(fv-1.6+1.6*i/29+Math.sin(i*1.7)*.35+Math.cos(i*.9)*.2)}v[29]=fv;const W=560,H=200,mn=92,mx=98.5;const X=i=>20+i*(W-30)/29,Y=x=>H-20-(x-mn)/(mx-mn)*(H-40);const p=v.map((x,i)=>`${i?"L":"M"}${X(i).toFixed(1)} ${Y(x).toFixed(1)}`).join("");let grid="";[93,95,97].forEach(g=>{grid+=`<line x1="20" x2="${W-10}" y1="${Y(g)}" y2="${Y(g)}" stroke="#EEEBE2"/><text x="${W-6}" y="${Y(g)+4}" font-size="10" fill="#8a948f" font-family="Outfit" text-anchor="end">${g}%</text>`});return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;direction:ltr"><defs><linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1FA79A" stop-opacity=".35"/><stop offset="1" stop-color="#1FA79A" stop-opacity="0"/></linearGradient></defs>${grid}<path d="${p} L${X(29)} ${H-20} L${X(0)} ${H-20}Z" fill="url(#tg)"/><path d="${p}" fill="none" stroke="#0F5E46" stroke-width="2.5" stroke-linejoin="round"/><circle cx="${X(29)}" cy="${Y(v[29])}" r="5" fill="#C9A45C" stroke="#fff" stroke-width="2"/><text x="${X(29)-8}" y="${Y(v[29])-12}" font-family="Outfit" font-size="12" font-weight="600" fill="#0B4A37" text-anchor="end">${v[29].toFixed(1)}%</text></svg>`}
+
+V.imam=()=>{const np=nextPrayer();const bcCls={off:"",pending:"pending",approved:"approved",rejected:"rejected"}[S.bc];const bcTxt={off:"bc_off",pending:"bc_pending",approved:"bc_on",rejected:"bc_rejected"}[S.bc];const avg=(FB.reduce((a,f)=>a+f.s,0)/FB.length).toFixed(1);
+const dev=(i,k,sub,sig)=>`<div class="dev"><span class="di">${ic(i)}</span><div><b>${t(k)}</b><small>${sub}</small></div>${sig?`<span class="sig">${[5,8,11,14].map(h=>`<i style="height:${h}px"></i>`).join("")}</span>`:""}<span class="badge b-ok">${ic("check")}${t("online")}</span></div>`;
+const step=s=>({off:0,rejected:0,pending:1,approved:2}[S.bc]>=s?"on":"");
+return `<div class="view"><div class="ph"><div><h1>${ic("mosque")}${t("nav_imam")}</h1><p>${t("w_imam")}</p></div><span class="live-chip"><span class="dotlive"></span>${t("live")}</span></div>
+<div class="grid igrid"><div class="card mprof"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><div><h2>${nm(IM)}</h2><div class="sub">${ic("pin")}${ar()?IM.dar:IM.den}</div></div><div style="width:46px">${logo()}</div></div><div class="meta"><div><small>${t("type")}</small><b>${t("jami")}</b></div><div><small>${t("capacity")}</small><b>2,400 ${t("worshippers")}</b></div><div><small>${t("imam")}</small><b>${ar()?IM.iar:IM.ien}</b></div><div><small>${t("muezzin")}</small><b>${ar()?IM.mar:IM.men}</b></div></div><div class="next"><div><small>${t("next_prayer")}</small><b>${t(PT[np.i][0])} · <bdi style="font-family:Outfit">${PT[np.i][1]}</bdi></b></div><div class="cd" data-cd>${hms(np.diff)}</div></div><div style="display:flex;justify-content:space-between;margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.7)"><span>${t("prayer_times")}</span><span>${ic("clock")} ${t("auto_upd")}</span></div><div class="ptimes">${PT.map((p,i)=>`<div class="pt ${i===np.i?"on":""}"><small>${t(p[0])}</small><b>${p[1]}</b></div>`).join("")}</div></div>
+<div class="card"><h3>${ic("cpu")}${t("devices")}</h3>${dev("mic","d_mic1","-18 dB · 48 kHz",1)}${dev("mic","d_mic2","Standby · 48 kHz")}${dev("wifi","d_gw","42 ms · TLS 1.3",1)}${dev("zap","d_power","UPS 100% · 220V")}${dev("sliders","d_mixer","8 ch · 600 W")}</div>
+<div class="card"><h3>${ic("radio")}${t("broadcast")}<span class="sp pilot" style="font-size:11px">${t("pilot")}</span></h3><div class="bcbox"><div class="bc-ring ${bcCls}">${ic(S.bc==="approved"?"radio":S.bc==="pending"?"clock":S.bc==="rejected"?"x":"mic")}</div><div class="bc-state">${t(bcTxt)}</div><div class="bc-note">${t("bc_note")}</div><div class="steps"><span class="${step(0)||"on"}">1 · ${t("step_req")}</span><span class="${step(1)}">2 · ${t("step_rev")}</span><span class="${step(2)}">3 · ${t("step_live")}</span></div>${S.bc==="off"||S.bc==="rejected"?`<button class="btn gold" data-act="bcreq">${ic("radio")}${t("bc_request")}</button>`:S.bc==="pending"?`<button class="btn soft" data-act="bccancel">${t("bc_cancel")}</button> <button class="btn sm" data-act="nav" data-v="ministry">${t("nav_ministry")} ${ic("next","flip")}</button>`:`<button class="btn red" data-act="bcstop">${ic("pause")}${t("bc_stop")}</button>`}</div></div></div>
+<div class="card" style="margin-top:18px"><h3>${ic("heart")}${t("echoes")}<span class="sp" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);font-weight:500">${t("avg_rating")} <b style="font-family:Outfit;font-size:18px;color:var(--g800)">${avg}</b><span style="color:var(--gold)">★</span> · ${fmt(312+FB.length)} ${t("reviews")}</span></h3><div class="echo-hero"><span class="h">${ic("heart")}</span><p>${t("echo_msg").replace("{n}",`<b style="font-family:Outfit">${fmt(1240+FB.length-7)}</b>`)}</p></div><div class="fb-list">${FB.map((f,i)=>`<div class="fb ${f.fresh?"new":""}" dir="${RTL[f.lang]?"rtl":"ltr"}"><div class="stars">${"★".repeat(f.s)}${"☆".repeat(5-f.s)}</div><p>${esc(f.txt)}</p><small><span>${esc(f.n)}</span><bdi dir="ltr" style="font-family:Outfit">${f.fresh?t("today"):f.d+"d"}</bdi></small></div>`).join("")}</div></div>
+<div class="grid two" style="margin-top:18px"><div class="card"><h3>${ic("award")}${t("badges")}</h3><div class="badges">${[["b1","star"],["b2","check"],["b3","mosque"],["b4","users"]].map(([k,i],n)=>`<div class="bdg ${n===3?"lock":""}"><div class="m">${ic(i)}</div><b>${t(k)}</b></div>`).join("")}</div><div style="margin-top:16px;display:flex;justify-content:space-between;font-size:13px"><b>${t("level")} 7</b><span style="color:var(--muted)">78% ${t("to_next")}</span></div><div class="lvl"><i style="width:78%"></i></div></div>
+<div class="card"><h3>${ic("list")}${t("logs")}</h3><table class="tbl"><tbody>${[["15:04","l2","b-ok"],["14:30","l5","b-info"],["11:36","l1","b-ok"],["09:10","l3","b-gray"],["00:01","l4","b-info"]].map(([h,k,b])=>`<tr><td class="num">${h}</td><td>${t(k)}</td><td><span class="badge ${b}" style="padding:3px 6px">${ic("check")}</span></td></tr>`).join("")}</tbody></table></div></div></div>`};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+V.app=()=>{const feats=[["explore","search"],["mosque","mosque"],["live","radio"],["rate","star"],["recv","home"]];
+return `<div class="view"><div class="ph"><div><h1>${ic("phone")}${t("nav_app")}</h1><p>${t("app_lead")}</p></div></div><div class="appstage"><div class="phone"><div class="scr ${S.big?"big":""}" id="scr">${phoneHTML()}</div></div><div class="feat-list">${feats.map(([k,i])=>`<button class="feat ${S.appTab===k?"on":""}" data-act="atab" data-v="${k}"><span class="fi">${ic(i)}</span><div><b>${t("tab_"+k)}${k==="live"?` <span class="pilot" style="font-size:11px">${t("pilot")}</span>`:k==="recv"?` <span class="future">${t("future")}</span>`:""}</b><span>${t("f_"+k)}</span></div></button>`).join("")}<div class="note">${ic("act")}<span>${t("tip_link")}</span></div></div></div></div>`};
+function phoneHTML(){const now=new Date();const tm=`${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;const m=APPM[S.appM];const tabs=[["explore","search"],["mosque","mosque"],["live","radio"],["rate","star"],["recv","home"]];
+let body="";
+if(S.appTab==="explore"){const q=S.q.trim().toLowerCase();const list=APPM.map((x,i)=>({x,i})).filter(({x})=>!q||[x.ar,x.en,x.dar,x.den,x.iar,x.ien].join(" ").toLowerCase().includes(q));
+body=`<div class="minimap"><span class="rd" style="left:0;right:0;top:44%;height:8px"></span><span class="rd" style="top:0;bottom:0;left:40%;width:8px"></span><span class="rd" style="left:10%;right:30%;top:78%;height:5px;transform:rotate(-8deg)"></span>${APPM.map((x,i)=>`<span class="pin" style="left:${x.x}%;top:${x.y}%;${i===0?"color:var(--gold3)":""}">${ic("pin")}</span>`).join("")}<span class="me" style="left:47%;top:52%"></span></div><div class="asec">${t("nearby")}</div><div class="alist">${list.map(({x,i})=>`<button class="mitem" data-act="amos" data-i="${i}"><span class="mi">${ic("mosque")}</span><div><b>${nm(x)}</b><small>${ar()?x.dar:x.den} · ${ar()?x.iar:x.ien}</small></div><span class="km">${x.km} ${t("km")}<br><span style="color:var(--gold3)">★ ${x.rt}</span></span></button>`).join("")||`<div class="empty">${t("no_results")}</div>`}</div>`}
+else if(S.appTab==="mosque"){const np=nextPrayer();body=`<div class="mcover"><span class="arch">${logo()}</span><div><b>${nm(m)}</b><small>${ar()?m.dar:m.den} · ${ar()?m.iar:m.ien}</small></div></div><div class="arow"><button class="btn soft" data-act="toast" data-k="directions">${ic("nav")}${t("directions")}</button><button class="btn" data-act="atab" data-v="live">${ic("radio")}${t("listen")}</button><button class="btn gold" data-act="atab" data-v="rate">${ic("star")}${t("rate")}</button></div><div class="asec" style="display:flex;justify-content:space-between"><span>${t("prayer_times")}</span><span style="font-family:Outfit;color:var(--gold3)" data-cd>${hms(np.diff)}</span></div><div class="apt">${PT.map((p,i)=>`<div class="${i===np.i?"on":""}"><small>${t(p[0])}</small><b>${p[1]}</b></div>`).join("")}</div><div class="asec">${t("avg_rating")}</div><div class="rate-sum"><b>${m.rt}</b><span style="color:var(--gold);letter-spacing:2px">★★★★★</span><span style="margin-inline-start:auto;font-size:.8em;color:var(--muted)">${fmt(m.cnt)} ${t("reviews")}</span></div>`}
+else if(S.appTab==="live"){const on=m.home&&S.bc==="approved";const hs=[18,34,52,64,40,70,48,30,58,66,36,22,44,60,28];body=`<div class="live-card"><span class="pilot">${ic("alert")} ${t("pilot")}</span><div style="margin-top:14px;font-family:var(--f-disp);font-size:1.15em">${nm(m)}</div><div style="font-size:.78em;opacity:.7">${ar()?m.dar:m.den}</div><div class="wave ${on&&S.playing?"on":""}">${hs.map((h,i)=>`<i style="--h:${h}px;animation-delay:${i*.07}s"></i>`).join("")}</div><button class="playb" data-act="play" ${on?"":"disabled"}>${ic(S.playing&&on?"pause":"play")}</button><div class="lock-msg">${on?t("live_on_msg"):t("live_off_msg")}</div></div>${!on&&m.home?`<div class="note" style="margin-top:12px;font-size:.78em">${ic("act")}<span>${t("tip_link")}</span></div>`:""}`}
+else if(S.appTab==="rate"){const row=(k,f)=>`<div class="rate-cat"><span>${t(k)}</span><span class="stars-in">${[1,2,3,4,5].map(n=>`<button class="${S.rt[f]>=n?"on":""}" data-act="star" data-f="${f}" data-n="${n}">★</button>`).join("")}</span></div>`;body=`<div class="asec" style="margin-top:0">${nm(m)}</div>${row("r_recit","r")}${row("r_clean","c")}${row("r_sound","s")}<textarea class="acomment" id="acom" placeholder="${t("comment_ph")}"></textarea><div class="amod">${ic("shield")}${t("moderation")}</div><button class="btn gold" style="width:100%;justify-content:center" data-act="sendfb">${ic("heart")}${t("send")}</button>`}
+else{body=`<div style="text-align:center"><span class="future">${t("future")}</span><div class="asec" style="font-size:1.05em">${t("receiver")}</div></div><div class="recv ${S.recvOn?"on":""}"><div class="grill">${"<i></i>".repeat(27)}</div><div class="lcd">${S.recvOn?`<span class="dotlive"></span> ${nm(APPM[0])}`:"— — —"}</div><button class="one" data-act="recv">${ic(S.recvOn?"radio":"play")}</button><div style="margin-top:12px;font-size:.75em;color:#6b6450;font-weight:600">${t("press_listen")}</div></div><p style="font-size:.84em;color:var(--muted);text-align:center;line-height:1.7;padding:0 6px">${t("receiver_d")}</p>`}
+return `<div class="sbar"><span>${tm}</span><span style="display:flex;gap:6px;align-items:center">${ic("wifi")}●●●</span></div><div class="ahead"><div class="r1"><b>${logoFull()}</b><button class="${S.big?"on":""}" data-act="big">${ic("text")} ${t("big_text")}</button></div>${S.appTab==="explore"?`<label class="asearch">${ic("search")}<input id="asq" value="${esc(S.q)}" placeholder="${t("search_ph")}"></label>`:""}</div><div class="abody">${body}</div><nav class="anav">${tabs.map(([k,i])=>`<button class="${S.appTab===k?"on":""}" data-act="atab" data-v="${k}">${ic(i)}${t("tab_"+k)}</button>`).join("")}</nav>`}
+
+V.iot=()=>`<div class="view"><div class="ph"><div><h1>${ic("cpu")}${t("iot_title")}</h1><p>${t("iot_sub")}</p></div></div><div class="card"><div class="chain"><div class="node"><div class="ni">${ic("sliders")}</div><b>${t("n_mixer")}</b><small>8 ch</small></div><div class="link"></div><div class="node"><div class="ni">${ic("mic")}</div><b>${t("n_sensor")}</b><small>${t("n_state")}</small></div><div class="link"></div><div class="node"><div class="ni">${ic("cpu")}</div><b>${t("n_gw")}</b><small>${t("n_secure")}</small></div><div class="link"></div><div class="node"><div class="ni">${ic("cloud")}</div><b>${t("n_cloud")}</b><small>${t("n_e2e")}</small></div><div class="link"></div><div class="outs"><div class="node"><div class="ni">${ic("gov")}</div><b>${t("eco_m")}</b></div><div class="node"><div class="ni">${ic("phone")}</div><b>${t("nav_app")}</b></div><div class="node"><div class="ni">${ic("radio")}</div><b>${t("receiver")}</b></div></div></div></div>
+<div class="grid hw" style="margin-top:18px">${[["cpu","gw_t","gw_d",["TLS 1.3","4G / Fiber","PoE"]],["mic","sens_t","sens_d",[t("n_state"),"48 kHz","< 1 s"]],["radio","recv_t","recv_d",["NB-IoT / LoRa","eSIM",t("press_listen")]],["cloud","cloud_t","cloud_d",["Auto-scale","99.9%",t("n_e2e")]]].map(([i,a,b,l])=>`<div class="card hwc"><div class="hi">${ic(i)}</div><h4>${t(a)}</h4><p>${t(b)}</p><ul>${l.map(x=>`<li>${ic("check")}${x}</li>`).join("")}</ul></div>`).join("")}</div>
+<div class="priv-banner">${ic("lock")}<div><b>${t("priv_t")}</b><span>${t("priv_d")}</span></div></div></div>`;
+
+V.gov=()=>`<div class="view"><div class="ph"><div><h1>${ic("shield")}${t("gov_title")}</h1><p>${t("gov_sub")}</p></div></div><div class="grid gcards">${[["gov","g1"],["lock","g2"],["users","g3"],["shield","g4"]].map(([i,k])=>`<div class="card gc"><div class="gi">${ic(i)}</div><h4>${t(k+"_t")}</h4><p>${t(k+"_d")}</p></div>`).join("")}</div><div class="card" style="margin-top:18px"><h3>${ic("act")}${t("flow_title")}</h3><div class="stepper">${[["act","f1"],["bell","f2"],["users","f3"],["eye","f4"],["check","f5"]].map(([i,k])=>`<div class="st ${k==="f3"||k==="f4"?"hum":""}"><div class="c">${ic(i)}</div><b>${t(k)}</b></div>`).join("")}</div><div class="never">${ic("shield")}${t("never")}</div><div class="note" style="margin-top:12px">${ic("alert")}<span>${t("review_note")}</span></div></div></div>`;
+
+/* ===================== RENDER ===================== */
+function applyLang(){const h=document.documentElement;h.lang=S.lang;h.dir=RTL[S.lang]?"rtl":"ltr";document.querySelectorAll("[data-t]").forEach(e=>e.innerHTML=t(e.dataset.t));document.querySelectorAll(".lang-chip").forEach(c=>c.classList.toggle("on",c.dataset.l===S.lang));const ls=document.getElementById("langSel");if(ls)ls.value=S.lang;document.getElementById("credit").innerHTML=`${ic("heart")}<span>${t("credit")} <bdi dir="ltr">0559965929</bdi></span>`;try{localStorage.setItem("mihrab_lang",S.lang)}catch(e){}}
+function render(){applyLang();renderTabs();document.getElementById("main").innerHTML=V[S.view]();post()}
+function post(){document.querySelectorAll("[data-count]").forEach(el=>{const target=parseFloat(el.dataset.count),suf=el.dataset.suf||"",dec=String(el.dataset.count).includes(".")?1:0;const t0=performance.now();const step=now=>{const p=Math.min(1,(now-t0)/1600),e=1-Math.pow(1-p,3);el.textContent=(dec?(target*e).toFixed(1):fmt(Math.round(target*e)))+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)});setTimeout(()=>document.querySelectorAll(".hbar i[data-w]").forEach(i=>i.style.width=i.dataset.w+"%"),60);const q=document.getElementById("asq");if(q)q.addEventListener("input",e=>{S.q=e.target.value;const pos=e.target.selectionStart;refreshPhone();const n=document.getElementById("asq");n.focus();n.setSelectionRange(pos,pos)})}
+function refreshPhone(){const s=document.getElementById("scr");if(s){s.innerHTML=phoneHTML();s.className="scr "+(S.big?"big":"");document.querySelectorAll(".feat").forEach(f=>f.classList.toggle("on",f.dataset.v===S.appTab));post()}}
+function go(v){S.view=v;S.sel=null;render();window.scrollTo({top:0,behavior:"smooth"})}
+
+/* ===================== EVENTS ===================== */
+const ACT={
+ nav:e=>go(e.dataset.v),
+ replay:()=>playIntro(true),
+ region:()=>{},
+ sf:e=>{const s=e.dataset.s;S.statusF[s]=S.statusF[s]?0:1;render()},
+ mdot:e=>{S.sel=+e.dataset.id;const w=document.getElementById("mapwrap");const old=w.querySelector(".mpanel");if(old)old.remove();w.insertAdjacentHTML("beforeend",mpanel(S.sel))},
+ mclose:()=>{S.sel=null;const p=document.querySelector(".mpanel");if(p)p.remove()},
+ al:e=>{const a=ALERTS.find(x=>x.id==e.dataset.id);a.st=e.dataset.s;render()},
+ rq:e=>{const id=e.dataset.id,ok=e.dataset.ok==="1";if(id==="imam"){S.bc=ok?"approved":"rejected";toast(t(ok?"toast_appr":"toast_rej"),ok?"radio":"x")}else{const i=REQS.findIndex(r=>r.id===id);if(i>-1)REQS.splice(i,1);toast(t(ok?"approve":"reject")+" ✓")}document.getElementById("reqs").innerHTML=reqsHTML()},
+ csv:()=>{const rows=MOS.filter(m=>(S.repRegion==="all"||m.r.k===S.repRegion)&&(S.repStatus==="all"||m.st===S.repStatus));const head=["ID","Mosque","المسجد","Region","Status","Readiness %","Last signal (min)","Period"];const csv="﻿"+[head,...rows.map(m=>[m.id,m.en,m.ar,m.r.en,m.st,m.rd.toFixed(1),m.ls,S.repPeriod.replace("p_","")])].map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));a.download=`mihrab-report-${S.repRegion}-${S.repPeriod.replace("p_","")}.csv`;document.body.appendChild(a);a.click();a.remove();toast(t("toast_csv"),"dl")},
+ print:()=>window.print(),
+ bcreq:()=>{S.bc="pending";const d=new Date();S.bcAt=`${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`;toast(t("toast_req"),"radio");render()},
+ bccancel:()=>{S.bc="off";render()},
+ bcstop:()=>{S.bc="off";S.playing=false;toast(t("toast_stop"),"pause");render()},
+ atab:e=>{S.appTab=e.dataset.v;refreshPhone()},
+ amos:e=>{S.appM=+e.dataset.i;S.appTab="mosque";S.playing=false;refreshPhone()},
+ play:()=>{S.playing=!S.playing;refreshPhone()},
+ star:e=>{S.rt[e.dataset.f]=+e.dataset.n;const v=document.getElementById("acom").value;refreshPhone();document.getElementById("acom").value=v},
+ sendfb:()=>{const r=S.rt;if(!r.r&&!r.c&&!r.s){toast(t("need_star"),"star");return}const txt=(document.getElementById("acom").value||"").trim()||t("cap2");const vals=[r.r,r.c,r.s].filter(Boolean);const s=Math.round(vals.reduce((a,b)=>a+b,0)/vals.length);FB.forEach(f=>f.fresh=false);FB.unshift({lang:S.lang,txt,n:"★ "+(ar()?"مستخدم مِحراب":"Mihrab user"),s,d:"0",fresh:true});S.rt={r:0,c:0,s:0};toast(t("thanks"),"heart");refreshPhone()},
+ big:()=>{S.big=!S.big;refreshPhone()},
+ recv:()=>{S.recvOn=!S.recvOn;refreshPhone()},
+ toast:e=>toast(t(e.dataset.k),"nav")
+};
+document.addEventListener("click",ev=>{const el=ev.target.closest("[data-act]");if(!el)return;const f=ACT[el.dataset.act];if(f&&el.tagName!=="SELECT")f(el)});
+document.addEventListener("change",ev=>{const el=ev.target;if(el.dataset.act==="region"){S.regionF=el.value;S.sel=null;render()}else if(el.dataset.act==="rep"){S[el.dataset.k]=el.value}else if(el.id==="langSel"){S.lang=el.value;render()}});
+document.getElementById("main").addEventListener("mousemove",ev=>{const d=ev.target.closest(".mdot");const tip=document.getElementById("maptip");if(!tip)return;if(!d){tip.style.opacity=0;return}const m=MOS.find(x=>x.id==d.dataset.id);const w=document.getElementById("mapwrap").getBoundingClientRect();tip.innerHTML=`<b>${nm(m)}</b> · ${nm(m.r)} · ${t("s_"+m.st)}`;tip.style.left=(ev.clientX-w.left)+"px";tip.style.top=(ev.clientY-w.top)+"px";tip.style.opacity=1});
+setInterval(()=>{const np=nextPrayer();document.querySelectorAll("[data-cd]").forEach(e=>e.textContent=hms(np.diff))},1000);
+
+/* ===================== GATE & INTRO ===================== */
+const gate=document.getElementById("gate"),intro=document.getElementById("intro"),vid=document.getElementById("introVid"),app=document.getElementById("app"),fin=document.getElementById("final");
+document.getElementById("finalLogo").innerHTML=logoFull();
+document.getElementById("introMini").innerHTML=logoFull();
+document.getElementById("hdrLogo").innerHTML=logoFull();
+document.getElementById("seal").innerHTML=logo();
+document.getElementById("gateLangs").innerHTML=LANGS.map(([k,n])=>`<button class="lang-chip" data-l="${k}">${n}</button>`).join("");
+document.getElementById("langSel").innerHTML=LANGS.map(([k,n])=>`<option value="${k}">${n}</option>`).join("");
+document.getElementById("gateLangs").addEventListener("click",e=>{const b=e.target.closest(".lang-chip");if(!b)return;S.lang=b.dataset.l;applyLang()});
+(function(){const m=document.getElementById("motes");let h="";for(let i=0;i<34;i++)h+=`<span style="left:${(Math.random()*100).toFixed(1)}%;animation-duration:${(9+Math.random()*12).toFixed(1)}s;animation-delay:${(-Math.random()*16).toFixed(1)}s;transform:scale(${(.5+Math.random()*1.3).toFixed(2)})"></span>`;m.innerHTML=h})();
+try{const l=localStorage.getItem("mihrab_lang");if(l&&LI[l]!==undefined)S.lang=l}catch(e){}
+applyLang();
+
+let SRC=[];(function(){try{const mp4ok=vid.canPlayType('video/mp4; codecs="avc1.64001F, mp4a.40.2"')||vid.canPlayType("video/mp4");const webok=vid.canPlayType('video/webm; codecs="vp9, opus"');const mk=(id,type)=>{const b=document.getElementById(id).textContent.trim();if(!b||b.startsWith("__"))return null;const bin=atob(b),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return URL.createObjectURL(new Blob([u],{type}))};const emb=document.getElementById("introData").textContent.trim().length>0;if(emb){if(mp4ok)SRC.push(()=>mk("introData","video/mp4"));if(webok)SRC.push(()=>mk("introWebm","video/webm"))}else{if(mp4ok)SRC.push(()=>"intro.mp4");if(webok)SRC.push(()=>"intro.webm")}nextSrc()}catch(e){console.warn(e)}})();
+function nextSrc(){const f=SRC.shift();if(!f)return false;const u=f();if(!u)return nextSrc();vid.src=u;vid.load();return true}
+
+if(!document.getElementById("introData").textContent.trim()&&/claude|anthropic/i.test(location.hostname))document.documentElement.classList.add("art");
+const caps=[...document.querySelectorAll(".cap")];
+let rafId=null,finalShown=false,readyShown=false;
+const bg=document.getElementById("introBg"),bctx=bg.getContext("2d");
+function tick(){const tt=vid.currentTime,dur=vid.duration||16.35;caps.forEach(c=>c.classList.toggle("show",tt>=+c.dataset.in&&tt<+c.dataset.out));if(tt>=13.1&&!finalShown){finalShown=true;fin.classList.add("show")}if(tt>=14.2&&!readyShown){readyShown=true;fin.classList.add("ready")}document.getElementById("prog").style.width=(tt/dur*100)+"%";try{bctx.drawImage(vid,0,0,bg.width,bg.height)}catch(e){}rafId=requestAnimationFrame(tick)}
+vid.addEventListener("error",()=>{if(nextSrc()){if(!intro.classList.contains("hidden"))vid.play().catch(()=>{})}else fin.classList.add("show","ready")});
+vid.addEventListener("ended",()=>{fin.classList.add("show","ready");document.getElementById("prog").style.width="100%"});
+function playIntro(replay){gate.classList.add("hidden");intro.classList.remove("hidden");finalShown=readyShown=false;fin.classList.remove("show","ready");caps.forEach(c=>c.classList.remove("show"));try{vid.currentTime=0}catch(e){}vid.muted=false;updMute();const p=vid.play();if(p&&p.catch)p.catch(()=>{vid.muted=true;updMute();document.getElementById("unmute").classList.add("on");vid.play().catch(()=>fin.classList.add("show","ready"))});cancelAnimationFrame(rafId);rafId=requestAnimationFrame(tick);clearTimeout(window._safe);window._safe=setTimeout(()=>{if(!intro.classList.contains("hidden")&&vid.currentTime<0.2){fin.classList.add("show","ready")}},4000);if(!replay){try{const r=document.documentElement.requestFullscreen;if(r&&window.innerWidth>820)r.call(document.documentElement).catch(()=>{})}catch(e){}}}
+function updMute(){document.getElementById("muteBtn").innerHTML=ic(vid.muted?"volx":"vol")}
+document.getElementById("muteBtn").onclick=()=>{vid.muted=!vid.muted;updMute();document.getElementById("unmute").classList.remove("on")};
+document.getElementById("unmute").onclick=()=>{vid.muted=false;updMute();document.getElementById("unmute").classList.remove("on");vid.play().catch(()=>{})};
+function fadeAudio(){const v0=vid.volume;let k=0;const iv=setInterval(()=>{k++;vid.volume=Math.max(0,v0*(1-k/12));if(k>=12){clearInterval(iv);vid.pause();vid.volume=1}},50)}
+function enterApp(){const h=document.documentElement;h.classList.add("doors-closed");document.body.classList.add("doors-closed");fadeAudio();setTimeout(()=>{gate.classList.add("hidden");intro.classList.add("hidden");cancelAnimationFrame(rafId);app.classList.add("on");S.view="home";render();window.scrollTo(0,0);setTimeout(()=>{document.body.classList.remove("doors-closed");h.classList.remove("doors-closed")},350)},950)}
+document.getElementById("enterBtn").onclick=()=>playIntro(false);
+document.getElementById("skipGate").onclick=enterApp;
+document.getElementById("skipIntro").onclick=enterApp;
+document.getElementById("goBtn").onclick=enterApp;
+document.getElementById("replayBtn").onclick=()=>playIntro(true);
+</script>
+</body>
+</html>
